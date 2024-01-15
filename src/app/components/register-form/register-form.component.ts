@@ -18,8 +18,8 @@ export class RegisterFormComponent {
 
   setFormValues(){
     this.form = new FormGroup({
-      firstname: new FormControl(),
-      lastname : new  FormControl(),
+      username: new FormControl(),
+      email : new  FormControl(),
       phone : new FormControl("", Validators.required),
       password : new FormControl("",Validators.required)
     });

@@ -1,6 +1,6 @@
 <div>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-        Είσοδος/Εγγραφή
+        Login/Register
     </button>
 </div>
 
@@ -8,31 +8,31 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="loginModaleLabel">Είσοδος Χρήστη</h5>
+                <h5 class="modal-title" id="loginModaleLabel">Login</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="form" (submit)="login()">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Τηλέφωνο</label>
+                        <label class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="phone">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Κωδικός</label>
+                        <label class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="password">
                         </div>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary">Είσοδος</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <span>Εγγραφή 
-                    <a data-bs-toggle="modal" href="#registerModal">εδώ</a>
+                <span> Go to 
+                    <a data-bs-toggle="modal" href="#registerModal">register</a>
                 </span>
             </div>
         </div>
@@ -42,43 +42,43 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registerModalLabel">Εγγραφή Χρήστη</h5>
+                <h5 class="modal-title" id="registerModalLabel">User register</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="form" (submit)="register()">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Όνομα</label>
+                        <label class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
-                            <input class="form-control" formControlName="firstname">
+                            <input class="form-control" formControlName="username">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Επώνυμο</label>
+                        <label class="col-sm-2 col-form-label">E-mail</label>
                         <div class="col-sm-10">
-                            <input class="form-control" formControlName="lastname">
+                            <input class="form-control" formControlName="email">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Τηλέφωνο</label>
+                        <label class="col-sm-2 col-form-label">Phone</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="phone">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Κωδικός</label>
+                        <label class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="password">
                         </div>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary">Εγγραφή</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <span>Είσοδος 
-                    <a data-bs-toggle="modal" href="#loginModal">εδώ</a>
+                <span>Back to  
+                    <a data-bs-toggle="modal" href="#loginModal">login</a>
                 </span>
             </div>
         </div>
