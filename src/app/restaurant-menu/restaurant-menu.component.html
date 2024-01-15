@@ -1,0 +1,8 @@
+<div class="container">
+    @for (item of data.products; track $index) {
+        <div class="card p-3 mb-2">
+            <p class="fw-bold">{{item.name}}</p>
+            <h6>{{item.price}}€</h6>
+        </div>
+    }
+</div>
