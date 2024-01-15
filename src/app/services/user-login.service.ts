@@ -1,7 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +8,10 @@ export class UserLoginService {
 
   constructor() { }
 
+  url = '/assets/users'
+
   http =inject(HttpClient)
   
-  url = 'assets/users'
-
   postUser(data: any) {
 
     const options = {
@@ -25,8 +23,8 @@ export class UserLoginService {
 
     return this.http.post(this.url, JSON.stringify(data), options)
     .pipe(
-      retry(1),
-      catchError(error => throwError(() => 'Something is wrong ${error.status}'))
+      //retry(1),
+      //catchError(error => throwError(() => 'Something is wrong ${error.status}'))
     );
   }
 }
