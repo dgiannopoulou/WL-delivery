@@ -12,7 +12,7 @@ export class UserLoginService {
 
   http =inject(HttpClient)
   
-  url = 'https://reqres.in/api/users'
+  url = 'assets/users'
 
   postUser(data: any) {
 
