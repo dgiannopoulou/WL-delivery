@@ -25,12 +25,6 @@ export class RegisterFormComponent {
     });
   }
 
-  submit(){
-    console.log("hello");
-    console.log(this.form);
-    
-  }
-
   register(){
     console.log("register");
     console.log(this.form);
