@@ -1,1 +1,86 @@
-<p>register-form works!</p>
+<div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+        Είσοδος/Εγγραφή
+    </button>
+</div>
+
+<div class="modal fade" id="loginModal" aria-hidden="true" aria-labelledby="loginModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModaleLabel">Είσοδος Χρήστη</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (submit)="login()">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Τηλέφωνο</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" formControlName="phone">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Κωδικός</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" formControlName="password">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Είσοδος</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span>Εγγραφή 
+                    <a data-bs-toggle="modal" href="#registerModal">εδώ</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="registerModal" aria-hidden="true" aria-labelledby="registerModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Εγγραφή Χρήστη</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (submit)="register()">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Όνομα</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" formControlName="firstname">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Επώνυμο</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" formControlName="lastname">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Τηλέφωνο</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" formControlName="phone">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Κωδικός</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" formControlName="password">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Εγγραφή</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span>Είσοδος 
+                    <a data-bs-toggle="modal" href="#loginModal">εδώ</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
