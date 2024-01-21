@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "McDonald's",
+        "category": "FAST_FOOD",
+        "address": "Syntagma 15" 
+    },
+    {
+        "id": 105,
+        "name": "Goodys Burger House",
+        "category": "FAST_FOOD",
+        "address": "Ampelokipous 23rd Av."
+    }
+]

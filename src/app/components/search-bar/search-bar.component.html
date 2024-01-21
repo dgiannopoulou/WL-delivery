@@ -1,4 +1,28 @@
-<form [formGroup]="form" (submit)="onSubmit()">
-    <input formControlName="searchData" placeholder="Search store or product">
-    <button class="btn btn-danger">Search</button>
+<form class="row g-1" [formGroup]="form" (submit)="onSubmit()">
+    <div class="col-auto">
+        <input formControlName="searchData" placeholder="Search store" class="form-control">
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-danger">Search</button>
+    </div>
 </form>
+
+
+<div class="card" [hidden]="!searchResults">
+    @for(store of storeList; track store.id){
+    {{store.name}}
+    <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{store.name}}</h5>
+                <p class="card-text">{{store.address}}</p>
+            </div>
+        </div>
+    </div>
+    }
+    @empty {
+    <h2>No data available...</h2>
+    }
+
+</div>

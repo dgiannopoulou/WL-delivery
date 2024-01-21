@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup ,ReactiveFormsModule} from '@angular/forms';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,9 +12,13 @@ import { FormControl, FormGroup ,ReactiveFormsModule} from '@angular/forms';
 })
 export class SearchBarComponent {
 
+  SearchService: SearchService = inject(SearchService);
+  storeList: any;
+  searchResults=false;
   form!: FormGroup;
 
   ngOnInit() { // lifecycle
+    
     this.setFormValues();
   }
 
@@ -25,10 +30,13 @@ export class SearchBarComponent {
   }
 
   onSubmit() {
-    console.log(this.form.get("searchData")?.value);
     let name = this.form.get("searchData")?.value;
-    // this.storeService.getByName(name).subscribe((productList) => {
-    //   this.productList = productList
-    // })
+    console.log(name);
+    this.SearchService.searchStore(name).subscribe(   
+      (storeList) => { this.storeList =  storeList;
+      console.log(storeList);
+      this.searchResults=true;
+    }
+    );
   }
 }
