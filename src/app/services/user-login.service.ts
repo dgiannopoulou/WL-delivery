@@ -8,7 +8,7 @@ export class UserLoginService {
 
   constructor() { }
 
-  url = '/assets/users'
+  url = '/assets/data/users'
 
   http =inject(HttpClient)
   
