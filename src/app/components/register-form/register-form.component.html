@@ -14,9 +14,9 @@
             <div class="modal-body">
                 <form [formGroup]="form" (submit)="login()">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Username</label>
+                        <label class="col-sm-2 col-form-label">E-mail</label>
                         <div class="col-sm-10">
-                            <input class="form-control" formControlName="phone">
+                            <input class="form-control" formControlName="email">
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -25,15 +25,13 @@
                             <input class="form-control" formControlName="password">
                         </div>
                     </div>
-                    <div>
+                    <div class="modal-footer">
+                        <small> Go to
+                            <a data-bs-toggle="modal" href="#registerModal">register</a>
+                        </small>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <span> Go to 
-                    <a data-bs-toggle="modal" href="#registerModal">register</a>
-                </span>
             </div>
         </div>
     </div>
@@ -48,38 +46,40 @@
             <div class="modal-body">
                 <form [formGroup]="form" (submit)="register()">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Username</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" formControlName="username">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">E-mail</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="email">
                         </div>
+                        <div *ngIf="form.get('email')?.invalid && (form.get('email')?.touched || form.get('email')?.dirty )"></div>
+                        <div class="text-danger" *ngIf="form.get('email')?.hasError('required')">*</div>
+                        <div class="text-danger" *ngIf="form.get('email')?.hasError('email')"> E-mail is invalid</div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Phone</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="phone">
                         </div>
+                        <div *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched || form.get('phone')?.dirty )"></div>
+                        <div class="text-danger" *ngIf="form.get('phone')?.hasError('pattern')"> Invalid phone number</div>
+                        <div class="text-danger" *ngIf="form.get('phone')?.hasError('required')">*</div>
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
                             <input class="form-control" formControlName="password">
                         </div>
+                        <div *ngIf="form.get('password')?.invalid && (form.get('password')?.touched || form.get('password')?.dirty )"></div>
+                        <div class="text-danger" *ngIf="form.get('password')?.hasError('required')">*</div>
+                        <div class="text-danger" *ngIf="form.get('password')?.hasError('minlength')"> Password must be at least 6 characters</div>
+                        <div class="text-danger" *ngIf="form.get('password')?.hasError('maxlength')"> Password must not exceed 40 characters</div>
                     </div>
-                    <div>
+                    <div class="modal-footer">
+                        <small> Back to
+                            <a data-bs-toggle="modal" href="#loginModal">login</a>
+                        </small>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <span>Back to  
-                    <a data-bs-toggle="modal" href="#loginModal">login</a>
-                </span>
             </div>
         </div>
     </div>
