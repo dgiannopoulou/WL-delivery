@@ -1,18 +1,10 @@
+.results {
+    position:absolute
+}
 
-.overlay {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .overlay-content {
+.result-item {
+    width: 18rem;
+    align-items: center;
     padding: 10px;
-  }
-  
-  .default-option {
-    padding: 8px;
     cursor: pointer;
-  }
+}

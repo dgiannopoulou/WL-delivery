@@ -39,4 +39,8 @@ export class SearchBarComponent {
     }
     );
   }
+
+  selectStore(store:any){
+    console.log(store)
+  }
 }
