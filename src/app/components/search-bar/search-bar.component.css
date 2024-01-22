@@ -1,0 +1,10 @@
+.results {
+    position:absolute
+}
+
+.result-item {
+    width: 18rem;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
