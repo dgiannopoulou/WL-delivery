@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
+import { bootstrapApplication } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-register-form',
@@ -18,6 +19,9 @@ export class RegisterFormComponent {
   registerForm! : FormGroup;
   loginForm! : FormGroup;
   router: Router = inject(Router);
+  @ViewChild('closeLoginButton') closeLoginButton:any;
+  @ViewChild('closeRegisterButton') closeRegisterButton:any;
+
 
 
   ngOnInit(){
@@ -53,6 +57,8 @@ export class RegisterFormComponent {
         }
       );
       console.log("valid register!");
+      this.registerForm.reset();
+      this.closeRegisterButton.nativeElement.click();
       this.router.navigate(['']);
     } else {
       // error message
@@ -73,6 +79,7 @@ export class RegisterFormComponent {
       );
       console.log("valid login!");
       this.loginForm.reset();
+      this.closeLoginButton.nativeElement.click();
       this.router.navigate(['']);
     } 
     else {
@@ -82,6 +89,11 @@ export class RegisterFormComponent {
     }
     // console.log(this.loginForm);
   }
+
+ 
+
   }
+
+
   
 
