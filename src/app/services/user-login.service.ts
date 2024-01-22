@@ -8,23 +8,31 @@ export class UserLoginService {
 
   constructor() { }
 
-  url = '/assets/data/users'
+  private http = inject(HttpClient)
 
-  http =inject(HttpClient)
+
+  url = '/assets/data/user.json'
+
   
-  postUser(data: any) {
-
+  registerUser(data: any) {
     const options = {
       headers: new HttpHeaders({
         'content-Type': 'application/json',
         'Accept': "application/json"
       })
     }
+      return this.http.post(this.url, JSON.stringify(data), options)
 
-    return this.http.post(this.url, JSON.stringify(data), options)
-    .pipe(
-      //retry(1),
-      //catchError(error => throwError(() => 'Something is wrong ${error.status}'))
-    );
+  }
+
+  loginUser(data: any) {
+    const options = {
+      headers: new HttpHeaders({
+        'content-Type': 'application/json',
+        'Accept': "application/json"
+      })
+    }
+      return this.http.post(this.url, JSON.stringify(data), options)
+
   }
 }
