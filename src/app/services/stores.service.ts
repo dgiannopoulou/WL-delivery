@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class StoresService {
   url = '/assets/data/stores.json'
   url_famous = '/assets/data/most_famous_stores_in_general.json'
 
-  getStores(){
-    return this.http.get(this.url);
+  getStores(): Observable<any[]>{
+    return this.http.get<any>(this.url);
   }
 
   getFamousStores(){
@@ -21,8 +22,8 @@ export class StoresService {
     });
     return this.http.get(this.url_famous, {headers: customHeaders});
   }
-   
-  
+
+
 
 
 
