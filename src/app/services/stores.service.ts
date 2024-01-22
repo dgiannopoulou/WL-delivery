@@ -15,6 +15,7 @@ export class StoresService {
 
   getStores(): Observable<any[]>{
     return this.http.get<any>(this.url_stores);
+  }
 
   getStore(){
     return this.http.get(this.url_store);
