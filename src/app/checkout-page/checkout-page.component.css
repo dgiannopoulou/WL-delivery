@@ -1,5 +1,5 @@
 .checkout {
-    background-color: #d8e8ec9d ;
+    background-color: #fffffff8 ;
     font-size: 12;
 }
 /* Popup container */
@@ -13,7 +13,7 @@
   .popup .popuptext {
     visibility: hidden;
     width: 160px;
-    background-color: #555;
+    background-color: #ffffff;
     color: #ffffff;
     text-align: center;
     border-radius: 6px;
