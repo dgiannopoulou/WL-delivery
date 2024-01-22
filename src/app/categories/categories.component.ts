@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CategoriesService } from '../services/categories.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
@@ -12,6 +13,8 @@ export class CategoriesComponent {
   response: any;
   response_famous: any;
   service = inject(CategoriesService);
+
+  
 
   ngOnInit(): void {
     this.getCategoriesData()
@@ -24,5 +27,11 @@ export class CategoriesComponent {
       }
     )
   }
+  
+  
+  trackByIndex(index: number, item: any): number {
+    return index;
+}
+
 
 }

@@ -1,0 +1,29 @@
+<h4 class="mt-4 mb-3 text-center">{{ storeDetails.name }}</h4>
+<h5 class="mt-4 mb-3 text-center">{{ storeDetails.category }}</h5>
+<h5 class="mt-4 mb-3 text-center">{{ storeDetails.address }}</h5>
+<img [src]="storeDetails.image" alt="{{ storeDetails.name }}">
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Product Name</th>
+    <th scope="col">Category</th>
+    <th scope="col">Price</th>
+    <th scope="col">Add to Cart</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (product of storeDetails.products; track $index) {
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price | currency: 'EUR' }}</td>
+        <td><a href="#" class="btn btn-outline-primary">+</a></td>
+      </tr>
+
+    }
+
+  </tbody>
+</table>
+
+
