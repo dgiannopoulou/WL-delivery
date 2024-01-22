@@ -36,8 +36,8 @@ export class RegisterFormComponent {
     });
 
       this.loginForm = new FormGroup({
-      email : new  FormControl(),
-      password : new FormControl()
+      email : new  FormControl("", [Validators.required]),
+      password : new FormControl("", [Validators.required])
     });
 
   }
@@ -53,9 +53,7 @@ export class RegisterFormComponent {
         }
       );
       console.log("valid register!");
-      //this.router.navigate(["home"]);
-
-
+      this.router.navigate(['']);
     } else {
       // error message
       this.registerForm.reset();
@@ -74,8 +72,8 @@ export class RegisterFormComponent {
         }
       );
       console.log("valid login!");
-     // this.router.navigate(["home"]);
-
+      this.loginForm.reset();
+      this.router.navigate(['']);
     } 
     else {
       // error message

@@ -1,5 +1,6 @@
 .results {
-    position:absolute
+    position:absolute;
+    z-index: 1000;
 }
 
 .result-item {
@@ -8,3 +9,18 @@
     padding: 10px;
     cursor: pointer;
 }
+
+.clear-btn {
+    position: absolute;
+    right: 8px;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    background-color:transparent;
+  }
+  
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
