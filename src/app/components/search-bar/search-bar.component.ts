@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup ,ReactiveFormsModule} from '@angular/forms';
 import { SearchService } from '../../services/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,7 +12,8 @@ import { SearchService } from '../../services/search.service';
   styleUrl: './search-bar.component.css'
 })
 export class SearchBarComponent {
-
+  
+  router: Router = inject(Router);
   SearchService: SearchService = inject(SearchService);
   storeList: any;
   searchResults=false;
@@ -42,5 +44,7 @@ export class SearchBarComponent {
 
   selectStore(store:any){
     console.log(store)
+    //this.router.navigate(["store",store.id]);
+
   }
 }
