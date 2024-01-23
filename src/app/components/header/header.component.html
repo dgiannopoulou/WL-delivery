@@ -1,17 +1,20 @@
 <header>
-    <div >
-      <span class="brand-name">WL Delivery</span>
-    </div>
-  
-    <div >
-      <app-search-bar></app-search-bar>
-    </div>
-    
-    <div>
-      <app-profile></app-profile>
-    </div>
+  <div>
+    <span class="brand-name">WL Delivery</span>
+  </div>
+
+  <div>
+    <app-search-bar></app-search-bar>
+  </div>
+
+  <ng-template *ngIf="true; then LoggedInBlock else GuestBlock"></ng-template>
+  <ng-template #LoggedInBlock>
+
+    <app-profile></app-profile>
+
+  </ng-template>
+  <ng-template #GuestBlock>
 
     <app-register-form></app-register-form>
-  </header>
-
-  
+  </ng-template>
+</header>
