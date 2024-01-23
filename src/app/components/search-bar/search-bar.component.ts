@@ -60,6 +60,10 @@ export class SearchBarComponent {
     this.router.navigate(["stores",store.id]);
   }
 
+  onSearchChange() {
+      this.searchResults=false;
+  }
+
   clearForm() {
     this.form.reset();
     this.searchResults=false;

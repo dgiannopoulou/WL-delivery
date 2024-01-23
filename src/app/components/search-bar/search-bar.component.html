@@ -1,9 +1,7 @@
   <form class="row g-1" [formGroup]="form" (submit)="onSubmit()">
     <div class="col-auto search-container">
-      <input formControlName="searchData" placeholder="Search store" class="form-control">
-      <button *ngIf=form.dirty class="clear-btn" (click)="clearForm()">
-        X
-      </button>
+      <input formControlName="searchData" placeholder="Search store" class="form-control search-input" (ngModelChange)="onSearchChange()">
+      <button *ngIf=form.dirty class="clear-btn" (click)="clearForm()">X</button>
     </div>
     <div class="col-auto">
       <button class="btn btn-danger" [disabled]=!form.dirty >Search</button>
