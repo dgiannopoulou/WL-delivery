@@ -35,4 +35,12 @@ export class UserLoginService {
       return this.http.post(this.url, JSON.stringify(data), options)
 
   }
+
+  viewProfile(){
+      return this.http.get(this.url)
+  }
+
+  editProfile(data: any){
+    return this.http.post(this.url, JSON.stringify(data))
+  }
 }
