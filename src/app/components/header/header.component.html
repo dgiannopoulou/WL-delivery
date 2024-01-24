@@ -9,12 +9,9 @@
 
   <ng-template *ngIf="true; then LoggedInBlock else GuestBlock"></ng-template>
   <ng-template #LoggedInBlock>
-
     <app-profile-avatar></app-profile-avatar>
-
   </ng-template>
   <ng-template #GuestBlock>
-
     <app-register-form></app-register-form>
   </ng-template>
 </header>
