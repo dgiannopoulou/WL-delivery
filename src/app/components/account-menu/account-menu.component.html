@@ -1,12 +1,11 @@
-<div class="side-navigation">
+<div class="side-navigation" routerLink="account">
     <div class="section-title">
         <h5>Hi Dimitra</h5>
-    </div>
+    </div> 
 
     <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action active" href="account">My account</a>
-        <a class="list-group-item list-group-item-action" href="account/orders">My orders</a>
-        <a class="list-group-item list-group-item-action" href="account/adresses">My addresses</a>
-    </div>
-
+        <a class="list-group-item list-group-item-action" routerLinkActive="active" routerLink="">My account</a>
+        <a class="list-group-item list-group-item-action" routerLinkActive="active" routerLink="/orders">My orders</a>
+        <a class="list-group-item list-group-item-action" routerLinkActive="active" routerLink="/adresses">My addresses</a>
+    </div> 
 </div>
