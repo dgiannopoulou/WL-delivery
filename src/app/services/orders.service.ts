@@ -8,11 +8,15 @@ export class OrdersService {
 
 
   http = inject(HttpClient)
- 	url = '/assets/data/my_orders.json'
+  url = '/assets/data/my_orders.json'
 
-  		getOrders() {
-   		return  this.http.get(this.url);}
+  getOrders() {
+    return this.http.get(this.url);
+  }
 
+  getOrderById(id: number) {
+    return this.http.get(this.url + "/" + id);
+  }
 
   constructor() { }
 }

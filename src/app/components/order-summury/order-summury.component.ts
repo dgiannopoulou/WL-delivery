@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-summury',
@@ -9,4 +10,11 @@ import { Component, Input } from '@angular/core';
 })
 export class OrderSummuryComponent {
   @Input() order:any;
+  router: Router = inject(Router);
+
+
+  selectOrder(order:any){
+    console.log(order);
+    this.router.navigate(["account/orders", order.id]);
+  }
 }
