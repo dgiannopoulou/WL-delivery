@@ -1,0 +1,29 @@
+[
+  {
+    "id": "430760220",
+    "store_name": "The Texans Wings & Tex-Mex Burgers",
+    "date": "25/01/2024",
+    "items": "1x Chicken Caesar burger"
+  },
+
+  {
+    "id": "400291852",
+    "store_name": "Coffee Lab",
+    "date": "30/09/2023",
+    "items": "1x Donut σοκολάτα, 1x Freddo espresso"
+  },
+
+  {
+    "id": "403893844",
+    "store_name": "Langolo Cucina Italiana",
+    "date": "14/10/2023",
+    "items": "1x Λιγκουίνι Black Angus, 1x Carbonara με κρέμα γάλακτος, 1x Calzone γλυκό"
+  },
+
+  {
+    "id": "391026656",
+    "store_name": "Εspuma coffee trends",
+    "date": "24/08/2023",
+    "items": "2x Freddo espresso"
+  }
+]

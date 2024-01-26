@@ -12,7 +12,7 @@ export const routes: Routes = [
     {path: 'stores/:id', component:StoreDetailsComponent},
     {path: 'account', component:AccountComponent},
     {path: 'account/orders', component:AccountOrdersComponent},
+    {path: 'account/adresses', component:AccountOrdersComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: "**", component: Error404Component}
-
 ];

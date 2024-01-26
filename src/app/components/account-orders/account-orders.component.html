@@ -3,10 +3,14 @@
         <div class="col-lg-2 col-md-3 col-sm-4">
             <app-account-menu></app-account-menu>
         </div>
-        <div class="col-lg-10 col-md-9 col-sm-8"> 
-
-
-            
+        <div class="col-lg-6 col-md-5 col-sm-4 mx-auto ">
+            <h4 class="mt-3 p-0.6">My orders</h4>
+            @for(order of orderList; track order.id){
+            <app-order-summury [order]=order></app-order-summury>
+            }
+            @empty {
+            <h2>There are no orders available</h2>
+            }
         </div>
     </div>
 </div>
