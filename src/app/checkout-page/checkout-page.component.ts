@@ -23,7 +23,7 @@ export class CheckoutPageComponent {
       firstName: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
       username: new FormControl("", Validators.required),
-      email: new FormControl("", [Validators.required, Validators.email]),
+      email: new FormControl(""),
       address: new FormControl("", Validators.required),
       address2: new FormControl("", Validators.required),
       zip: new FormControl("", Validators.required),

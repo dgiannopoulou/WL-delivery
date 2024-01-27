@@ -1,6 +1,6 @@
 <div class="checkout p-3">
   <div class="row">
-    <div class="col-md-4 order-md-2 mb-4">
+    <!-- <div class="col-md-4 order-md-2 mb-4">
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
         <span class="badge badge-secondary badge-pill">3</span>
@@ -39,7 +39,7 @@
           <strong>€20</strong>
         </li>
       </ul>
-    </div>
+    </div> -->
     <form [formGroup]="form" (submit)="onSubmit()" class="card p-2">
       <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Billing address</h4>
@@ -49,7 +49,7 @@
             <input type="text" formControlName="firstName" class="form-control" id="firstName" placeholder="e.g Maria"
                    value="" required="">
             <span class="text-danger"
-                  *ngIf="form.get('firstnName')?.hasError('required') && form.get('firstName')?.touched">Required</span>
+                  *ngIf="form.get('firstName')?.hasError('required') && form.get('firstName')?.touched">Required</span>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Last name</label>
@@ -67,9 +67,9 @@
               <span class="input-group-text">&#64;</span>
             </div>
             <input type="text" formControlName="username" class="form-control" id="username" placeholder="Username"
-                   required="">
+            value="" required="">
             <span class="text-danger"
-                  *ngIf="form.get('username')?.hasError('required') && form.get('userame')?.touched">Required</span>
+                  *ngIf="form.get('username')?.hasError('required') && form.get('username')?.touched">Required</span>
           </div>
         </div>
 
