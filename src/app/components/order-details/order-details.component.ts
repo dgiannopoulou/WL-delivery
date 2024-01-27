@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { OrdersService } from '../../services/orders.service';
 import { AccountMenuComponent } from '../account-menu/account-menu.component';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-order-details',
@@ -13,9 +13,9 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class OrderDetailsComponent {
 
-  rateForm!: FormGroup;
   activatedRoute = inject(ActivatedRoute);
   orderService: OrdersService = inject(OrdersService);
+  selectedRating = 0;
   order: any;
 
 
@@ -36,10 +36,23 @@ export class OrderDetailsComponent {
       })
   }
 
+  updateRating(rating:number){
+      this.selectedRating = rating;
+  }
+
   rateOrder(){
+    this.orderService.setOrderRating(this.order.id,this.selectedRating)
+            .subscribe({
+              next: data => {
+                console.log(data);
+                this.order = data;
+                console.log(this.order.rate)
+
+              }
+            })
   
 
-    console.log()
+    console.log(this.selectedRating)
   };
 
 }
