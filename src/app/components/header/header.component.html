@@ -7,7 +7,7 @@
     <app-search-bar></app-search-bar>
   </div>
 
-  <ng-template *ngIf="true; then LoggedInBlock else GuestBlock"></ng-template>
+  <ng-template *ngIf="false; then LoggedInBlock else GuestBlock"></ng-template>
   <ng-template #LoggedInBlock>
     <app-profile-avatar></app-profile-avatar>
   </ng-template>

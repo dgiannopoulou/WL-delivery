@@ -19,8 +19,6 @@ export class RegisterFormComponent {
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   router: Router = inject(Router);
-  @ViewChild('closeLoginButton') closeLoginButton: any;
-  @ViewChild('closeRegisterButton') closeRegisterButton: any;
 
 
 
@@ -30,6 +28,8 @@ export class RegisterFormComponent {
 
   setFormValues() {
     this.registerForm = new FormGroup({
+      name: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
       phone: new FormControl("", [Validators.required, Validators.pattern('[- +()0-9]{10,12}')]),
       password: new FormControl("", [
@@ -56,7 +56,6 @@ export class RegisterFormComponent {
           this.user = user;
           console.log("valid register!");
           this.registerForm.reset();
-          this.closeRegisterButton.nativeElement.click();
           this.router.navigate(['']);
         }
       );
@@ -73,7 +72,6 @@ export class RegisterFormComponent {
       );
       console.log("valid login!");
       this.loginForm.reset();
-      this.closeLoginButton.nativeElement.click();
       this.router.navigate(['']);
     }
   }
