@@ -1,16 +1,8 @@
-
 .card {
     margin-top: 1em;
     padding: 0.6em;
     box-shadow: 1px 0px 14px 0px lightgray;
-    height:auto;
     border-radius: 1em;
     border: none;
-}
-
-
-
-
-.b-b-default {
-    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
 }

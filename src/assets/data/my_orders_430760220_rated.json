@@ -1,0 +1,11 @@
+{
+    "id": "430760220",
+    "store_name": "The Texans Wings & Tex-Mex Burgers",
+    "store_id":"1",
+    "address":"Λεωφόρος Αλεξάνδρας 15, Αθήνα",
+    "total" : "10.00 €",
+    "payment": "Cash",
+    "date": "25/01/2024",
+    "items": ["1x Chicken Caesar burger"],
+    "rate": 4
+}

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Output, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
@@ -12,6 +12,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
 })
+
 export class RegisterFormComponent {
 
   UserLoginService: UserLoginService = inject(UserLoginService);
@@ -19,19 +20,25 @@ export class RegisterFormComponent {
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   router: Router = inject(Router);
-  @ViewChild('closeLoginButton') closeLoginButton: any;
-  @ViewChild('closeRegisterButton') closeRegisterButton: any;
+  logged?:boolean;
+  @Output() actionEventEmitter = new EventEmitter();
 
+  constructor(private cdr:ChangeDetectorRef){
 
+  }
 
   ngOnInit() {
     this.setFormValues();
+    this.actionEventEmitter.emit(this.logged);
+
   }
 
   setFormValues() {
     this.registerForm = new FormGroup({
+      name: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
-      phone: new FormControl("", [Validators.required, Validators.pattern('[- +()0-9]{10,12}')]),
+      phone: new FormControl("", [Validators.required, Validators.pattern('[- +()0-9]{10,15}')]),
       password: new FormControl("", [
         Validators.required,
         Validators.minLength(6),
@@ -46,36 +53,52 @@ export class RegisterFormComponent {
 
   }
 
+  //  Login function - Get the register form value and make http request, 
+  //  set the local storage parameter true assuming a login flow
+  //  and emit event for instant reload. Reset register form and go to home page
   register() {
     if (this.registerForm.valid) {
       let user = this.registerForm.value;
       console.log(user);
-
       this.UserLoginService.registerUser(user).subscribe(
         (user) => {
           this.user = user;
           console.log("valid register!");
+          //Added cdr in order to force update variables, due to asychronous call
+          this.cdr.detectChanges(); 
+          localStorage.setItem( 'logIn', 'true');
+          this.logged=true;
+          this.actionEventEmitter.emit(this.logged);
           this.registerForm.reset();
-          this.closeRegisterButton.nativeElement.click();
           this.router.navigate(['']);
         }
       );
     }
   }
 
+  // Login function - Get the login form value and make http request, 
+  // set the local storage parameter true 
+  // and emit event for instant reload. Reset login form and go to home
   login() {
     if (this.loginForm.valid) {
       let user = this.loginForm.value;
       this.UserLoginService.loginUser(user).subscribe(
-        (user) => {
+        (user) => 
+          {
           this.user = user;
+          console.log("valid login!");
+          console.log(user);
+          //Added cdr in order to force update variables, due to asychronous call
+          this.cdr.detectChanges(); 
+          localStorage.setItem( 'logIn', 'true');
+          this.logged=true;
+          this.actionEventEmitter.emit(this.logged);
+          this.loginForm.reset();
+          this.router.navigate(['']);
         }
       );
-      console.log("valid login!");
-      this.loginForm.reset();
-      this.closeLoginButton.nativeElement.click();
-      this.router.navigate(['']);
     }
   }
+
 
 }

@@ -9,5 +9,8 @@ import { RegisterFormComponent } from '../register-form/register-form.component'
   styleUrl: './profile-avatar.component.css'
 })
 export class ProfileAvatarComponent {
+  logout(){
+    localStorage.setItem( 'logIn', 'false');
+  }
 
 }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
 export class AccountDetailsComponent {
 
   UserLoginService: UserLoginService = inject(UserLoginService);
-  @ViewChild('closeEditButton') closeEditButton: any;
 
   router: Router = inject(Router);
   editForm!: FormGroup;
@@ -22,14 +21,11 @@ export class AccountDetailsComponent {
 
 
   ngOnInit() {
-
-
     this.UserLoginService.viewProfile()
       .subscribe(
         {
           next: data => {
             this.user = data
-            console.log(data)
             this.setFormValues();
           }
         }
@@ -52,9 +48,8 @@ export class AccountDetailsComponent {
         user => {
           this.user = user;
           console.log("valid edit!");
-          this.closeEditButton.nativeElement.click();
           this.resetEditForm();
-          this.router.navigate(['account']);
+          this.router.navigate(['account/profile']);
         }
       );
     } 
