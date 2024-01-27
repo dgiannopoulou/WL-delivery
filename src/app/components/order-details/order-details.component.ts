@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { OrdersService } from '../../services/orders.service';
 import { AccountMenuComponent } from '../account-menu/account-menu.component';
 
 @Component({
   selector: 'app-order-details',
   standalone: true,
-  imports: [AccountMenuComponent],
+  imports: [AccountMenuComponent,RouterLink],
   templateUrl: './order-details.component.html',
   styleUrl: './order-details.component.css'
 })
