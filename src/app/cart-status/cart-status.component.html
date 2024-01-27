@@ -1,1 +1,12 @@
-<p>cart-status works!</p>
+<div class="d-flex">
+    <a data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
+        <i class="bi-cart me-1"></i>
+        <span class="badge bg-danger text-white ms-1 rounded-pill">{{cartProducts.length}}</span>
+    </a>
+</div>
+
+    <div class="offcanvas offcanvas-end w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+        <div class="offcanvas-header">
+            <h2>My Cart</h2>
+            <app-cart></app-cart>
+</div>
