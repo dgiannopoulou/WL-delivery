@@ -26,7 +26,6 @@ export class AccountDetailsComponent {
         {
           next: data => {
             this.user = data
-            console.log(data)
             this.setFormValues();
           }
         }

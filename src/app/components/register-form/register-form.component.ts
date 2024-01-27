@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { PublisherUserService } from '../../services/publisher-user.service';
 
 @Component({
   selector: 'app-register-form',
@@ -15,6 +16,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 export class RegisterFormComponent {
 
   UserLoginService: UserLoginService = inject(UserLoginService);
+  publisherUserService = inject(PublisherUserService);
   user: any;
   registerForm!: FormGroup;
   loginForm!: FormGroup;
@@ -31,7 +33,7 @@ export class RegisterFormComponent {
       name: new FormControl("", Validators.required),
       lastName: new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
-      phone: new FormControl("", [Validators.required, Validators.pattern('[- +()0-9]{10,12}')]),
+      phone: new FormControl("", [Validators.required, Validators.pattern('[- +()0-9]{10,15}')]),
       password: new FormControl("", [
         Validators.required,
         Validators.minLength(6),
@@ -68,11 +70,13 @@ export class RegisterFormComponent {
       this.UserLoginService.loginUser(user).subscribe(
         (user) => {
           this.user = user;
+          console.log("valid login!");
+          console.log(user);
+          this.loginForm.reset();
+          this.router.navigate(['']);
         }
       );
-      console.log("valid login!");
-      this.loginForm.reset();
-      this.router.navigate(['']);
+     
     }
   }
 

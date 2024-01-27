@@ -7,11 +7,11 @@
     <app-search-bar></app-search-bar>
   </div>
 
-  <ng-template *ngIf="true; then LoggedInBlock else GuestBlock"></ng-template>
-  <ng-template #LoggedInBlock>
+  <!-- <ng-template *ngIf="false; then LoggedInBlock else GuestBlock"></ng-template>
+  <ng-template #LoggedInBlock> -->
     <app-profile-avatar></app-profile-avatar>
-  </ng-template>
-  <ng-template #GuestBlock>
+  <!-- </ng-template>
+  <ng-template #GuestBlock> -->
     <app-register-form></app-register-form>
-  </ng-template>
+  <!-- </ng-template> -->
 </header>
