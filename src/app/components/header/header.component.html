@@ -12,16 +12,19 @@
     </ng-template>
   </div>
 
-  <div>
-    <app-cart-status></app-cart-status>
-    </div>
-
-
-  <ng-template *ngIf="(loggedIn || userLog ); then LoggedInBlock else GuestBlock" ></ng-template>
+ 
+  <ng-template *ngIf="(loggedIn || userLog ); then LoggedInBlock else GuestBlock"></ng-template>
   <ng-template #LoggedInBlock>
-    <app-profile-avatar></app-profile-avatar>
+    <div class="d-inline-flex">
+      <div class="me-4">
+        <app-cart-status></app-cart-status>
+      </div>
+      <div>
+        <app-profile-avatar></app-profile-avatar>
+      </div>
+    </div>
   </ng-template>
   <ng-template #GuestBlock>
     <app-register-form (actionEventEmitter)="loggedUser($event)"></app-register-form>
   </ng-template>
-</header>
+  </header>
