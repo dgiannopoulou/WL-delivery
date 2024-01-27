@@ -1,33 +1,36 @@
 <div class="container">
-    <div *ngIf="cartProducts.length===0">
-        <h1>Cart is empty</h1>
+  <div class="emptyBasket" *ngIf="cartProducts.length === 0">
+    <h3>Shopping bag is empty</h3>
+    <img
+      class="shoppingImage"
+      src="../assets/images/basket-shopping.svg"
+      alt="Shopping basket"
+    />
+  </div>
+  <div *ngIf="cartProducts.length > 0">
+    <table class="table table-hover">
+      <tbody>
+        @for (cartItem of cartProducts; track $index) {
+        <tr>
+          <td>{{ cartItem.quantity }}</td>
+          <td>{{ cartItem.product.name }}</td>
+          <td>
+            {{ cartItem.product.price * cartItem.quantity}}€
+          </td>
+          <td>
+            <!-- <button class="btn btn-danger" (click)="remove(cartItem.product.id)"><i class="bi bi-plus"></i>Remove</button></td> -->
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="totalPrice fw-bold">
+      Total: {{getTotal() | number:'1.2-2'}}€
     </div>
-    <div *ngIf="cartProducts.length>0">
-        <table class="table table-hover">
-            <thead>
-            <tr>
-              <th scope="col">Product Name</th>
-              <th scope="col">Category</th>
-              <th scope="col">Price</th>
-              <th scope="col">Remove Item</th>
-            </tr>
-            </thead>
-            <tbody>
-              @for (product of cartProducts; track $index) {
-                <tr>
-                  <td>{{ product.name }}</td>
-                  <td>{{ product.category }}</td>
-                  <td>{{ product.price | currency: 'EUR' }}</td>
-                  <td>
-                    <button class="btn btn-danger" (click)="remove(product.id)"><i class="bi bi-plus"></i>Remove</button></td>
-                  </tr>
-              }
-              <tr>
-                <button class="btn btn-danger" routerLink="/checkout">Checkout</button>
-              </tr>
-          
-            </tbody>
-          </table>
-    </div>
-    </div>
-    
+    <button class="btn btn-success mt-3" routerLink="/checkout">
+      Checkout
+    </button>
+  </div>
+</div>

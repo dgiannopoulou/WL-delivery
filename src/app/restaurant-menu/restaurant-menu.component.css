@@ -1,0 +1,15 @@
+img {
+    width:130px;
+    height:130px;
+    border-radius: 10px;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.counterContainer{
+    gap: 8px;
+}

@@ -1,13 +1,15 @@
 import {Component, inject, Input} from '@angular/core';
 import {StoresService} from "../services/stores.service";
 import {CurrencyPipe} from "@angular/common";
-import { AddtocartService } from '../services/addtocart.service';
-
+import { CartService } from '../services/cart.service';
+import { RestaurantBannerComponent } from '../restaurant-banner/restaurant-banner.component';
+import { RestaurantMenuComponent } from '../restaurant-menu/restaurant-menu.component';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-store-details',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RestaurantBannerComponent, RestaurantMenuComponent, CartComponent],
   templateUrl: './store-details.component.html',
   styleUrl: './store-details.component.css'
 })
@@ -32,7 +34,7 @@ export class StoreDetailsComponent {
     )
   }
 
-  constructor(public cart:AddtocartService){}
+  constructor(public cart:CartService){}
 
   add(a:any) {
     this.cart.addProduct(a);

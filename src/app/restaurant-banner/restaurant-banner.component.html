@@ -1,9 +1,20 @@
-<div class="card p-3 mb-3">
-    <img class="card-img-top " style="height: 180px;" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Store image">
-    <div class="card-body">
-        <h5 class="card-title">{{data.name}}</h5>
-        <p class="card-text">{{data.category}} {{data.address}}</p>
+<div class="card p-3 mt-5 mb-5">
+  <img
+    [src]="data.image"
+    class="bannerImage"
+    alt="{{ data.name }}"
+  />
+  <div class="card-body">
+    <h3 class="card-title">{{ data.name }}</h3>
+    <div class="row">
+      <div class="d-flex justify-content-between">
+        <p class="card-text">
+          {{ data.category }}
+        </p>
+        <p class="card-text">
+          {{ data.address }}
+        </p>
+      </div>
     </div>
+  </div>
 </div>
-
-

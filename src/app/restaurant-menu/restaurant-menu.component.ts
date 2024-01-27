@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { StoresService } from '../services/stores.service';
+import { Component, Input} from '@angular/core';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-restaurant-menu',
@@ -9,21 +9,24 @@ import { StoresService } from '../services/stores.service';
   styleUrl: './restaurant-menu.component.css'
 })
 export class RestaurantMenuComponent {
-  data: any;
-  response_famous: any;
-  service = inject(StoresService);
 
-  ngOnInit(): void {
-    this.getStoreData()
+  constructor(public cart:CartService){}
+
+  addProduct(product:any) {
+    this.cart.addProduct(product);
   }
 
-  getStoreData() {
-    this.service.getStore().subscribe(
-      {
-        next: data => this.data = data
-      }
-    )
+  removeProduct(product:any) {
+    this.cart.removeProduct(product);
   }
 
+  getTotalItems(product:any) {
+    return this.cart.getCountForProduct(product);
+  }
+
+  isEnabled(product:any) {
+    return this.cart.getCountForProduct(product) === 0;
+  }
   
+  @Input() product: any;
 }
