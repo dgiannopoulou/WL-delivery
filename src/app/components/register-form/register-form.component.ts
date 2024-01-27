@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, Output, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';

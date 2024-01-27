@@ -15,7 +15,6 @@ export const routes: Routes = [
     {path: 'account/profile', component:AccountComponent},
     {path: 'account/orders', component:AccountOrdersComponent},
     {path: 'account/orders/:id', component:OrderDetailsComponent},
-    {path: 'account/adresses', component:AccountOrdersComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: "**", component: Error404Component}
 ];
