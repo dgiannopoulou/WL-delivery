@@ -1,13 +1,13 @@
 <div class="row d-flex align-items-center justify-content-center">
     <h4 class="mt-5 mb-3 text-center">Our Top Stores</h4>
-    @for (item of response; track $index) {
+    @for (store of storesList; track $index) {
         <div class="col-auto mb-4 text-center">
             <div class="card" style="width: 18rem;" >
-                <img [src]="item.image" class="card-img-top" alt="...">
+                <img [src]="store.image" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{item.name}}</h5>
-                    <p class="card-text">{{item.category}}<br>{{item.address}}</p>
-                    <a [routerLink]="['/stores', item.id]" class="btn btn-primary">Go to store...</a>
+                    <h5 class="card-title">{{store.name}}</h5>
+                    <p class="card-text">{{store.category}}<br>{{store.address}}</p>
+                    <a [routerLink]="['/stores', store.id]" class="btn btn-primary">Go to store...</a>
                 </div>
             </div>
         </div>

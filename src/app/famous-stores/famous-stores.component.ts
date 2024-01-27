@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import { StoresService } from '../services/stores.service';
 import { CommonModule } from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
@@ -12,21 +12,29 @@ import {Router, RouterLink} from '@angular/router';
 })
 export class FamousStoresComponent {
 
+  @Input() category: any;
 
-  response: any;
+  storesList: any;
   service = inject(StoresService);
 
-  ngOnInit(): void {
-    this.getFamousData()
+  constructor() {
+    console.log(this.category)
   }
+  ngOnInit(): void {
 
-  getFamousData() {
     this.service.getFamousStores().subscribe(
       {
-        next: (data: any) => this.response = data
+        next: (response: any) => {
+          this.storesList = response
+          if (this.category) {
+            console.log(this.category)
+            console.log(response)
+            let stores = response.filter((current: any) => current.category == this.category)
+            this.storesList = stores;
+          }
+        }
       }
     )
   }
-
 
 }

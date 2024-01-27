@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { CategoriesComponent } from '../categories/categories.component';
-import { StoresComponent } from '../stores/stores.component';
-import { FamousStoresComponent } from '../famous-stores/famous-stores.component';
-import { SidebarComponent } from '../sidebar/sidebar.component';
+import {Component, inject, Input, OnInit} from '@angular/core';
+import {CategoriesComponent} from '../categories/categories.component';
+import {StoresComponent} from '../stores/stores.component';
+import {FamousStoresComponent} from '../famous-stores/famous-stores.component';
+import {SidebarComponent} from '../sidebar/sidebar.component';
+import {NavigationEnd, Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-homepage',
@@ -12,5 +14,16 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   styleUrl: './homepage.component.css'
 })
 export class HomepageComponent {
+
+  @Input() category: any;
+
+  router = inject(Router)
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        window.location.reload();
+      }
+    });
+  }
 
 }

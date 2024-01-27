@@ -1,20 +1,21 @@
 import { Component, inject } from '@angular/core';
 import { CategoriesService } from '../services/categories.service';
 import { CommonModule } from '@angular/common';
+import {RouterLink} from "@angular/router";
+import {FamousStoresComponent} from "../famous-stores/famous-stores.component";
+import {StoresComponent} from "../stores/stores.component";
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
 export class CategoriesComponent {
-  response: any;
-  response_famous: any;
-  service = inject(CategoriesService);
+ categories: any;
 
-  
+  service = inject(CategoriesService);
 
   ngOnInit(): void {
     this.getCategoriesData()
@@ -23,15 +24,10 @@ export class CategoriesComponent {
   getCategoriesData() {
     this.service.getCategories().subscribe(
       {
-        next: data => this.response = data
+        next: response => this.categories = response
       }
     )
   }
-  
-  
-  trackByIndex(index: number, item: any): number {
-    return index;
-}
 
 
 }

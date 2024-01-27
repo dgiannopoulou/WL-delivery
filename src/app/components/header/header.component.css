@@ -10,7 +10,11 @@ header {
 .brand-name {
   font-size: 1.5em;
   font-weight: bold;
-  color: #333; 
+  color: #333;
+}
+
+#logo {
+  text-decoration: none;
 }
 
 
