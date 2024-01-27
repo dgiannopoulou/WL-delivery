@@ -13,4 +13,10 @@ import { ProfileAvatarComponent } from '../profile-avatar/profile-avatar.compone
 })
 export class HeaderComponent {
 
+  loggedIn?:boolean;
+
+  loggedUser(data:boolean){
+    this.loggedIn = data;
+  }
+
 }

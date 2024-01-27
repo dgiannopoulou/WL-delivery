@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Output, ViewChild, inject } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { PublisherUserService } from '../../services/publisher-user.service';
 
 @Component({
   selector: 'app-register-form',
@@ -13,19 +12,23 @@ import { PublisherUserService } from '../../services/publisher-user.service';
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
 })
+
 export class RegisterFormComponent {
 
   UserLoginService: UserLoginService = inject(UserLoginService);
-  publisherUserService = inject(PublisherUserService);
   user: any;
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   router: Router = inject(Router);
+  logged:boolean = false;
+  @Output() actionEventEmitter = new EventEmitter();
 
 
 
   ngOnInit() {
     this.setFormValues();
+    this.actionEventEmitter.emit(this.logged);
+
   }
 
   setFormValues() {
@@ -57,6 +60,8 @@ export class RegisterFormComponent {
         (user) => {
           this.user = user;
           console.log("valid register!");
+          this.logged=true;
+          this.actionEventEmitter.emit(this.logged);
           this.registerForm.reset();
           this.router.navigate(['']);
         }
@@ -71,13 +76,14 @@ export class RegisterFormComponent {
         (user) => {
           this.user = user;
           console.log("valid login!");
-          console.log(user);
+          this.logged=true;
+          this.actionEventEmitter.emit(this.logged);
           this.loginForm.reset();
           this.router.navigate(['']);
         }
       );
-     
     }
   }
+
 
 }
