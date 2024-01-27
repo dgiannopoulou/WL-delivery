@@ -9,7 +9,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="loginModaleLabel">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" #closeLoginButton class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="loginForm" (submit)="login()">
@@ -29,7 +29,7 @@
                         <small> Go to
                             <a data-bs-toggle="modal" href="#registerModal">register</a>
                         </small>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary" [disabled]=!loginForm.valid>Login</button>
                     </div>
                 </form>
             </div>
@@ -41,7 +41,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="registerModalLabel">User register</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button #closeRegisterButton type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="registerForm" (submit)="register()">
@@ -80,7 +80,7 @@
                         <small> Back to
                             <a data-bs-toggle="modal" href="#loginModal">login</a>
                         </small>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" [disabled]=!registerForm.valid>Register</button>
                     </div>
                 </form>
             </div>

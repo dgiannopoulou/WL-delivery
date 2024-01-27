@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2, inject } from '@angular/core';
 import { FormControl, FormGroup ,ReactiveFormsModule} from '@angular/forms';
 import { SearchService } from '../../services/search.service';
 import { Router } from '@angular/router';
@@ -19,8 +19,20 @@ export class SearchBarComponent {
   searchResults=false;
   form!: FormGroup;
 
+  
+  constructor(private renderer: Renderer2, private el: ElementRef) {}
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: Event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.clearForm();
+    }
+  }
+
   ngOnInit() { // lifecycle
-    
+    this.renderer.listen('document', 'click', (event) => {
+      this.handleClickOutside(event);
+    });
     this.setFormValues();
   }
 
@@ -43,8 +55,18 @@ export class SearchBarComponent {
   }
 
   selectStore(store:any){
-    console.log(store)
-    //this.router.navigate(["store",store.id]);
-
+    console.log(store);
+    this.clearForm();
+    this.router.navigate(["stores",store.id]);
   }
+
+  onSearchChange() {
+      this.searchResults=false;
+  }
+
+  clearForm() {
+    this.form.reset();
+    this.searchResults=false;
+  }
+
 }

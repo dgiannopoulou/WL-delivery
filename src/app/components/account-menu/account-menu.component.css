@@ -1,0 +1,14 @@
+.side-navigation {
+    margin-top: 1em;
+    padding: 0.6em;
+    box-shadow: 1px 0px 14px 0px lightgray;
+    height: 97%;
+    border-radius: 1em;
+}
+
+.section-title {
+    padding: 1em;
+    h5 {
+        text-align: center;
+    }
+}

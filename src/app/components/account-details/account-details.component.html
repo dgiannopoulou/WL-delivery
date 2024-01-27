@@ -1,0 +1,110 @@
+<div class="card">
+    <div class="row m-l-0 m-r-0">
+        <div class="col-sm-12">
+            <div class="card-block">
+                <h6 class="b-b-default f-w-600">Information</h6>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="f-w-600">Name</p>
+                        <h6 class="text-muted">{{user.name}}</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="f-w-600">Last Name</p>
+                        <h6 class="text-muted">{{user.lastName}}</h6>
+                    </div>
+                </div>
+                <h6 class="m-t-40 b-b-default f-w-600">Contact</h6>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="f-w-600">Email</p>
+                        <h6 class="text-muted">{{user.email}}</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="f-w-600">Phone</p>
+                        <h6 class="text-muted">{{user.phone}}</h6>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
+                        data-bs-target="#editModal">
+                        Edit
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="editModal" aria-hidden="true" aria-labelledby="registerModalLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel"></h5>
+                <button #closeEditButton type="button" class="btn-close" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="editForm" (submit)="editAccount()">
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><small class="text-danger">*</small>
+                            Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+                        <div
+                            *ngIf="editForm.invalid && (editForm.get('name')?.touched || editForm.get('name')?.dirty )">
+                            <small class="text-danger" *ngIf="editForm.get('name')?.hasError('required')">Name is
+                                required</small>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><small class="text-danger">*</small>Last Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" formControlName="lastName">
+                        </div>
+                        <div
+                            *ngIf="editForm.invalid && (editForm.get('lastName')?.touched || editForm.get('lastName')?.dirty )">
+                            <small class="text-danger" *ngIf="editForm.get('lastName')?.hasError('required')">Last Name
+                                is required</small>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><small class="text-danger">*</small> E-mail</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+                        <div
+                            *ngIf="editForm.invalid && (editForm.get('email')?.touched || editForm.get('email')?.dirty )">
+                            <small class="text-danger" *ngIf="editForm.get('email')?.hasError('required')">E-mail
+                                is required</small>
+                            <small class="text-danger" *ngIf="editForm.get('email')?.hasError('email')">E-mail is
+                                invalid</small>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label"><small class="text-danger">*</small> Phone</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" formControlName="phone">
+                        </div>
+                        <div
+                            *ngIf="editForm.invalid && (editForm.get('phone')?.touched || editForm.get('phone')?.dirty )">
+                            <small class="text-danger" *ngIf="editForm.get('phone')?.hasError('required')">Phone
+                                number is required.</small>
+                            <small class="text-danger" *ngIf="editForm.get('phone')?.hasError('pattern')">Invalid
+                                phone format.</small>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="edit" class="btn btn-primary" [disabled]=!editForm.valid >Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
