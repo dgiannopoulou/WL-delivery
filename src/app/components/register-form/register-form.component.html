@@ -30,7 +30,8 @@
                         <small> Go to
                             <a data-bs-toggle="modal" href="#registerModal">register</a>
                         </small>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  [disabled]=!loginForm.valid>Login</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"  data-bs-toggle="modal" 
+                        data-bs-target="#welcomeModal" [disabled]=!loginForm.valid>Login</button>
                     </div>
                 </form>
             </div>
@@ -128,7 +129,7 @@
         <div class="modal-content">
             <div class="modal-body mx-auto">
                 <img class="pe-2" src="../../../assets/images/icon_success.png">
-                Welcome {{user.name}}!
+               <p>Welcome {{user.name}}!</p> 
             </div>
         </div>
     </div>

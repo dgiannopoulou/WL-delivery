@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, ViewChild, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Output, ViewChild, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
@@ -23,7 +23,9 @@ export class RegisterFormComponent {
   logged?:boolean;
   @Output() actionEventEmitter = new EventEmitter();
 
+  constructor(private cdr:ChangeDetectorRef){
 
+  }
 
   ngOnInit() {
     this.setFormValues();
@@ -51,15 +53,19 @@ export class RegisterFormComponent {
 
   }
 
+  //  Login function - Get the register form value and make http request, 
+  //  set the local storage parameter true assuming a login flow
+  //  and emit event for instant reload. Reset register form and go to home page
   register() {
     if (this.registerForm.valid) {
       let user = this.registerForm.value;
       console.log(user);
-
       this.UserLoginService.registerUser(user).subscribe(
         (user) => {
           this.user = user;
           console.log("valid register!");
+          //Added cdr in order to force update variables, due to asychronous call
+          this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
           this.actionEventEmitter.emit(this.logged);
@@ -70,14 +76,20 @@ export class RegisterFormComponent {
     }
   }
 
+  // Login function - Get the login form value and make http request, 
+  // set the local storage parameter true 
+  // and emit event for instant reload. Reset login form and go to home
   login() {
     if (this.loginForm.valid) {
       let user = this.loginForm.value;
       this.UserLoginService.loginUser(user).subscribe(
-        (user) => {
+        (user) => 
+          {
           this.user = user;
           console.log("valid login!");
           console.log(user);
+          //Added cdr in order to force update variables, due to asychronous call
+          this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
           this.actionEventEmitter.emit(this.logged);
