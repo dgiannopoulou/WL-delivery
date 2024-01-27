@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddtocartService } from '../services/addtocart.service';
+import { CartService } from '../services/cart.service';
 import { CartComponent } from '../cart/cart.component';
 
 @Component({
@@ -13,10 +13,10 @@ export class CartStatusComponent {
 
   public cartProducts: any;
 
-  constructor(public cart:AddtocartService){}
+  constructor(public cart:CartService){}
 
   ngOnInit(): void {
-    this.cartProducts = this.cart.getcartProducts()
+    this.cartProducts = this.cart.getCartProducts()
   }
   
 }

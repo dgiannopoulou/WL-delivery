@@ -1,5 +1,4 @@
-import { Component, inject } from '@angular/core';
-import { StoresService } from '../services/stores.service';
+import { Component, Input, inject } from '@angular/core';
 
 @Component({
   selector: 'app-restaurant-banner',
@@ -9,19 +8,5 @@ import { StoresService } from '../services/stores.service';
   styleUrl: './restaurant-banner.component.css'
 })
 export class RestaurantBannerComponent {
-  data: any;
-  response_famous: any;
-  service = inject(StoresService);
-
-  ngOnInit(): void {
-    this.getStoreData()
-  }
-
-  getStoreData() {
-    this.service.getStore().subscribe(
-      {
-        next: data => this.data = data
-      }
-    )
-  }
+  @Input() data: any;
 }
