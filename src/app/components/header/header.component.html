@@ -3,17 +3,17 @@
     <span class="brand-name">WL Delivery</span>
   </div>
 
-  <div>
-    <app-search-bar></app-search-bar>
+  <div >
+    <ng-template *ngIf="searchBar; then searchBarBlock else noSearchBarBlock" ></ng-template>
+    <ng-template #searchBarBlock>
+      <app-search-bar></app-search-bar>
+    </ng-template>
+    <ng-template #noSearchBarBlock>
+    </ng-template>
   </div>
 
-  <!-- <div class="d-inline-flex">
-    <div class="me-2"><app-profile-avatar></app-profile-avatar></div>
-    <div><app-register-form></app-register-form></div>
-  </div> -->
 
-
-  <ng-template *ngIf="loggedIn; then LoggedInBlock else GuestBlock" ></ng-template>
+  <ng-template *ngIf="(loggedIn || userLog ); then LoggedInBlock else GuestBlock" ></ng-template>
   <ng-template #LoggedInBlock>
     <app-profile-avatar></app-profile-avatar>
   </ng-template>

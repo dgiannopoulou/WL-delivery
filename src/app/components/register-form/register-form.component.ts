@@ -20,7 +20,7 @@ export class RegisterFormComponent {
   registerForm!: FormGroup;
   loginForm!: FormGroup;
   router: Router = inject(Router);
-  logged:boolean = false;
+  logged?:boolean;
   @Output() actionEventEmitter = new EventEmitter();
 
 
@@ -60,6 +60,7 @@ export class RegisterFormComponent {
         (user) => {
           this.user = user;
           console.log("valid register!");
+          localStorage.setItem( 'logIn', 'true');
           this.logged=true;
           this.actionEventEmitter.emit(this.logged);
           this.registerForm.reset();
@@ -76,6 +77,8 @@ export class RegisterFormComponent {
         (user) => {
           this.user = user;
           console.log("valid login!");
+          console.log(user);
+          localStorage.setItem( 'logIn', 'true');
           this.logged=true;
           this.actionEventEmitter.emit(this.logged);
           this.loginForm.reset();

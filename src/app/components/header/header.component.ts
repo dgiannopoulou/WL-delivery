@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
 import { CommonModule } from '@angular/common';
 import { ProfileAvatarComponent } from '../profile-avatar/profile-avatar.component';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,10 +14,28 @@ import { ProfileAvatarComponent } from '../profile-avatar/profile-avatar.compone
 })
 export class HeaderComponent {
 
-  loggedIn?:boolean;
+  activatedRoute = inject(ActivatedRoute);
+  router =inject(Router);
+  private location?: Location
+  loggedIn?: boolean;
+  userLog?:boolean;
+  searchBar? :boolean;
 
-  loggedUser(data:boolean){
+  loggedUser(data: boolean) {
     this.loggedIn = data;
   }
 
+  ngOnInit() {
+    let url = window.location.href.toString();
+    console.log(url);
+    if (url.includes('account')) {
+      this.searchBar = false;
+    }else{
+      this.searchBar = true;
+    }
+    
+    this.userLog = localStorage.getItem('logIn') === 'true' ;
+    
+  }
 }
+
