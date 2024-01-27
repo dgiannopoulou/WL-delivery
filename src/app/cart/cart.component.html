@@ -1,1 +1,33 @@
-<p>cart works!</p>
+<div class="container">
+    <div *ngIf="cartProducts.length===0">
+        <h1>Cart is empty</h1>
+    </div>
+    <div *ngIf="cartProducts.length>0">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+              <th scope="col">Product Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Remove Item</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (product of cartProducts; track $index) {
+                <tr>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.category }}</td>
+                  <td>{{ product.price | currency: 'EUR' }}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="remove(product.id)"><i class="bi bi-plus"></i>Remove</button></td>
+                  </tr>
+              }
+              <tr>
+                <button class="btn btn-danger" routerLink="/checkout">Checkout</button>
+              </tr>
+          
+            </tbody>
+          </table>
+    </div>
+    </div>
+    

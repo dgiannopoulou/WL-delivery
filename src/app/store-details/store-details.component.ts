@@ -1,6 +1,7 @@
 import {Component, inject, Input} from '@angular/core';
 import {StoresService} from "../services/stores.service";
 import {CurrencyPipe} from "@angular/common";
+import { AddtocartService } from '../services/addtocart.service';
 
 
 @Component({
@@ -29,6 +30,12 @@ export class StoreDetailsComponent {
         }
       }
     )
+  }
+
+  constructor(public cart:AddtocartService){}
+
+  add(a:any) {
+    this.cart.addProduct(a);
   }
 
 }
