@@ -1,8 +1,4 @@
-<!--<div class="container">
-    <app-categories />
-    <app-famous-stores />
-    <app-stores />
-</div> -->
+
 
 <div class="container-fluid mt-3">
     <div class="row">
@@ -11,8 +7,8 @@
         </div>
         <div class="col-lg-10 col-md-9 col-sm-8">
             <app-categories/>
-            <app-famous-stores/>
-            <app-stores/>
+            <app-famous-stores [category]="category"/>
+            <app-stores [category]="category"/>
         </div>
     </div>
 </div>

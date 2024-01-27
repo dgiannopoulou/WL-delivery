@@ -1,17 +1,16 @@
 <header>
     <div >
-      <span class="brand-name">WL Delivery</span>
+      <a [routerLink]="['/home']" id="logo"><span class="brand-name">WL Delivery</span></a>
     </div>
-  
+
     <div >
       <app-search-bar></app-search-bar>
     </div>
-  
-    <div >
-      <app-register-form></app-register-form>
+
+    <div>
+      <app-profile></app-profile>
     </div>
+
+    <app-register-form></app-register-form>
   </header>
 
-  <!-- <div>
-    <app-profile></app-profile>
-  </div> -->
