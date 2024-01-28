@@ -32,10 +32,10 @@ export class CartComponent implements OnInit {
     return this.cart.calculateTotal();
   }
 
-  // remove(id:any) {
-  //   this.cartProducts = this.cartProducts.filter((product:any)=>{
-  //     return product.id !== id
-  //   })
-  // }
+  //Remove a Product from Cart
+  removeFromCart(product: any) {
+    this.cart.removeAllProduct(product);
+    this.cartProducts = this.cart.getCartProducts();
+  }
   
 }

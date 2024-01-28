@@ -1,6 +1,6 @@
 <div class="container">
   <div class="emptyBasket" *ngIf="cartProducts.length === 0">
-    <h3>Shopping bag is empty</h3>
+    <h3>Cart is empty</h3>
     <img
       class="shoppingImage"
       src="../assets/images/basket-shopping.svg"
@@ -17,7 +17,7 @@
           <td>{{ cartItem.product.name }}</td>
           <td>{{ cartItem.product.price * cartItem.quantity | number:'1.2-2'}}€</td>
           <td>
-            <!-- <button class="btn btn-danger" (click)="remove(cartItem.product.id)"><i class="bi bi-plus"></i>Remove</button> -->
+            <button class="btn btn-danger" (click)="removeFromCart(cartItem.product)"><i class="bi bi-plus"></i>Remove</button>
           </td>
         </tr>
         }
