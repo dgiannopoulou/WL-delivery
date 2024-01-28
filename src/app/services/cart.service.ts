@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter  } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { CartItem } from '../interfaces/CartItem';
 
 @Injectable({
@@ -7,10 +7,11 @@ import { CartItem } from '../interfaces/CartItem';
 
 export class CartService {
 
-  public cartProducts: { [key: string]: CartItem } = {};
+  public cartProducts: { [key: string]: CartItem } = {};  // A collection of items where each item is identified by a string key
   
   listChanged: EventEmitter<void> = new EventEmitter<void>();
 
+  // Adds a new product and refreshes the localstorage.
   addProduct(product: any) {
     if (!this.cartProducts[product.id]) {
       this.cartProducts[product.id] = { product: product, quantity: 0 };
@@ -20,6 +21,7 @@ export class CartService {
     this.listChanged.emit();
   }
 
+  // Removes a product and refreshes the localstorage.
   removeProduct(product: any) {
     if (this.cartProducts[product.id]) {
       this.cartProducts[product.id].quantity--;
@@ -31,11 +33,17 @@ export class CartService {
     this.listChanged.emit(); 
   }
 
-  getCountForProduct(product: any): number {
+  cleanList():void {
+    localStorage.removeItem('cartItems');
+  }
+
+  // This function checks if the product exists in our structure and returns the quantity.
+  getQuantityOfProduct(product: any): number {
     const cartItem = this.cartProducts[product.id];
     return cartItem ? cartItem.quantity : 0;
   }
 
+  // This function parses the Json we saved in localstorage and returns all the products as an object.
   getCartProducts(): CartItem[] {
     const storedCartItems = localStorage.getItem('cartItems');
     if (storedCartItems) {
@@ -44,6 +52,7 @@ export class CartService {
     return Object.values(this.cartProducts);
   }
 
+  // This function converts our object into an array and calculates iteratively the total cost of the products in our cart.
   calculateTotal(): number {
     return Object.values(this.cartProducts).reduce((total, cartItem) => {
       return total + cartItem.product.price * cartItem.quantity;

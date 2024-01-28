@@ -1,0 +1,5 @@
+<div class="d-flex align-items-center column counterContainer">
+    <button class="btn rounded-circle btn-outline-primary" (click)="removeProduct(product)" [disabled]="isEnabled(product)">-</button>
+    <span>{{getTotalItems(product)}}</span>
+    <button class="btn rounded-circle btn-outline-primary" (click)="addProduct(product)">+</button>
+</div>

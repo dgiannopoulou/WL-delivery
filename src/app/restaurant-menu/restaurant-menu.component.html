@@ -1,27 +1,23 @@
 <div class="d-flex align-items-center gap-3 mb-3">
-    @if (product.category == 'BURGERS') {
+    @if (product?.category == 'BURGERS') {
         <img src="assets/images/burger.jpg" alt="Burger Image">
     }
-    @else if (product.category == 'SALADS') {
+    @else if (product?.category == 'SALADS') {
         <img src="assets/images/salad.jpg" alt="Burger Image">
     }
-    @else if (product.category == 'FRIES_&_SIDES') {
+    @else if (product?.category == 'FRIES_&_SIDES') {
         <img src="assets/images/fries_and_sides.jpg" alt="Burger Image">
     }  
-    @else if (product.category == 'NUGGETS') {
+    @else if (product?.category == 'NUGGETS') {
         <img src="assets/images/nuggets.jpg" alt="Burger Image">
     }  
     <div class="container">
         <div class="card p-3 mb-2 cardContainer">
             <div class="columns">
-                <p class="fw-bold">{{product.name}}</p>
-                <h6>{{product.price}}€</h6>
+                <p class="fw-bold">{{product?.name}}</p>
+                <h6>{{product?.price}}€</h6>
             </div>
-            <div class="d-flex align-items-center column counterContainer">
-                <button class="btn btn-outline-primary" (click)="removeProduct(product)" [disabled]="isEnabled(product)">-</button>
-                <span>{{getTotalItems(product)}}</span>
-                <button class="btn btn-outline-primary" (click)="addProduct(product)">+</button>
-            </div>
+            <app-add-remove-buttons [product]="product"></app-add-remove-buttons>
         </div>
     </div>
 </div>

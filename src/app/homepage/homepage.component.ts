@@ -4,7 +4,7 @@ import {StoresComponent} from '../stores/stores.component';
 import {FamousStoresComponent} from '../famous-stores/famous-stores.component';
 import {SidebarComponent} from '../sidebar/sidebar.component';
 import {NavigationEnd, Router} from "@angular/router";
-
+import {CartService} from '../services/cart.service';
 
 @Component({
   selector: 'app-homepage',
@@ -15,6 +15,8 @@ import {NavigationEnd, Router} from "@angular/router";
 })
 export class HomepageComponent {
 
+  constructor(public cart: CartService) { }
+
   @Input() category: any;
 
   router = inject(Router)
@@ -24,6 +26,7 @@ export class HomepageComponent {
         window.location.reload();
       }
     });
+    this.cart.cleanList(); // This removes the products from the cart when you visit homepage
   }
 
 }
