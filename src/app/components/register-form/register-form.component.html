@@ -9,7 +9,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="loginModaleLabel">Login</h5>
-                <button type="button" #closeLoginButton class="btn-close" data-bs-dismiss="modal"
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
                     aria-label="Close" (click)="loginForm.reset()"></button>
             </div>
             <div class="modal-body">
@@ -25,6 +25,11 @@
                         <div class="col-sm-9">
                             <input type="password" class="form-control" formControlName="password">
                         </div>
+                        <div *ngIf="loginForm.get('password')?.touched || loginForm.get('password')?.dirty">
+                            <div *ngIf="loginForm.get('password')?.hasError('required')">
+                                <small class="text-danger">Password is required!</small>
+                            </div>   
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <small> Go to
@@ -38,12 +43,14 @@
         </div>
     </div>
 </div>
+
+
 <div class="modal fade" id="registerModal" aria-hidden="true" aria-labelledby="registerModalLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="registerModalLabel">User register</h5>
-                <button #closeRegisterButton type="button" class="btn-close" data-bs-dismiss="modal"
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
                     aria-label="Close" (click)="registerForm.reset()"></button>
             </div>
             <div class="modal-body">
