@@ -3,11 +3,12 @@ import { AccountMenuComponent } from '../account-menu/account-menu.component';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-change-password',
   standalone: true,
-  imports: [AccountMenuComponent, ReactiveFormsModule],
+  imports: [AccountMenuComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './change-password.component.html',
   styleUrl: './change-password.component.css'
 })
