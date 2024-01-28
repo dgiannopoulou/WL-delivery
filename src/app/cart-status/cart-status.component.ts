@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { CartComponent } from '../cart/cart.component';
 
@@ -11,12 +11,20 @@ import { CartComponent } from '../cart/cart.component';
 })
 export class CartStatusComponent {
 
-  public cartProducts: any;
+  cartProducts: number = 0;
+  cart = inject(CartService);
 
-  constructor(public cart:CartService){}
+  constructor(){}
 
   ngOnInit(): void {
-    this.cartProducts = this.cart.getCartProducts()
+    this.cartProducts = this.cart.getAllCartProducts();
+    this.subscribeToProductChanges();
+  }
+
+  private subscribeToProductChanges(): void {
+    this.cart.listChanged.subscribe(() => {
+      this.cartProducts = this.cart.getAllCartProducts();
+    });
   }
   
 }
