@@ -3,18 +3,21 @@
         "id": 34,
         "name": "Mikel",
         "category": "COFFEE",
-        "address": "Ampelokipoi 72" 
+        "address": "Ampelokipoi 72",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6799788/cover?t=1698825075&platform=web"
     },
     {
         "id": 4,
         "name": "Coffee Lab",
         "category": "COFFEE",
-        "address": "Athinaion 15" 
+        "address": "Athinaion 15",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6588314/cover?t=1690894084&platform=web"
     },
     {
         "id": 5,
         "name": "Gregory",
         "category": "COFFEE",
-        "address": "Agisilaou 222" 
+        "address": "Agisilaou 222",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4072051/cover?t=1706412605&platform=web"
     }
 ]
