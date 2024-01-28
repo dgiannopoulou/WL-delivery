@@ -1,11 +1,20 @@
 <div class="d-flex">
-    <a data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
-        <i class="bi-cart me-1"></i>
+    <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <img
+      class="shoppingImage"
+      src="../assets/images/basket-shopping.svg"
+      alt="Shopping basket"
+    />
         <span class="badge bg-danger text-white ms-1 rounded-pill">{{cartProducts}}</span>
     </a>
 </div>
 
-    <div class="offcanvas offcanvas-end w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
-        <div class="offcanvas-header">
-            <app-cart></app-cart>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">My Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-cart></app-cart>
+  </div>
 </div>
