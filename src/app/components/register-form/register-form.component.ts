@@ -47,7 +47,7 @@ export class RegisterFormComponent {
     });
 
     this.loginForm = new FormGroup({
-      email: new FormControl("", [Validators.required]),
+      email: new FormControl("", [Validators.required,Validators.email]),
       password: new FormControl("", [Validators.required])
     });
 
@@ -68,9 +68,8 @@ export class RegisterFormComponent {
           this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
-          this.actionEventEmitter.emit(this.logged);
+          // this.actionEventEmitter.emit(this.logged);
           this.registerForm.reset();
-          this.router.navigate(['']);
         }
       );
     }
@@ -92,12 +91,14 @@ export class RegisterFormComponent {
           this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
-          this.actionEventEmitter.emit(this.logged);
-          this.loginForm.reset();
-          this.router.navigate(['']);
+          // this.actionEventEmitter.emit(this.logged);
         }
       );
     }
+  }
+
+  closeWelcome(){
+    this.router.navigate(['']);
   }
 
 
