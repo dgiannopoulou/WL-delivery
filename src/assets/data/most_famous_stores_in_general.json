@@ -4,7 +4,7 @@
         "name": "McDonald's",
         "category": "FAST_FOOD",
         "address": "Syntagma 15",
-      "image": "https://img.freepik.com/premium-photo/fast-food-assortment-junk-food-concept-unhealthy-food-heart-teeth-skin-figure_839035-83490.jpg"
+        "image": "https://img.freepik.com/premium-photo/fast-food-assortment-junk-food-concept-unhealthy-food-heart-teeth-skin-figure_839035-83490.jpg"
 
     },
     {
@@ -12,7 +12,7 @@
         "name": "Pizza Fan",
         "category": "PIZZA",
         "address": "Ippokrateiou 35",
-      "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg"
+        "image":"https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6494006/cover?t=1687778289&platform=web"
 
     },
     {
@@ -20,7 +20,7 @@
         "name": "Roma Pizza",
         "category": "PIZZA",
         "address": "Menelaou 22",
-      "image": "https://i.ytimg.com/vi/G2ciuE3-TrM/maxresdefault.jpg"
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/191644/cover?t=1651067911&platform=web"
 
     },
     {
@@ -28,7 +28,7 @@
         "name": "Goodys Burger House",
         "category": "FAST_FOOD",
         "address": "Ampelokipous 23rd Av.",
-      "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg"
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/1251237/cover?t=1675926506&platform=web"
 
     },
     {
@@ -36,38 +36,45 @@
         "name": "The Big Bad Wolf",
         "category": "SOUVLAKI",
         "address": "Agioi Anargiroi 98",
-      "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg"
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/834186/cover?t=1694604448&platform=web"
 
     },
     {
         "id": 34,
         "name": "Mikel",
         "category": "COFFEE",
-        "address": "Ampelokipoi 72"
+        "address": "Ampelokipoi 72",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6799788/cover?t=1698825075&platform=web"
     },
     {
         "id": 2,
         "name": "StreetWok",
         "category": "ASIAN",
-        "address": "Glyfada Str. 203"
+        "address": "Glyfada Str. 203",
+        "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg"
+
     },
     {
         "id": 4,
         "name": "Coffee Lab",
         "category": "COFFEE",
-        "address": "Athinaion 15"
+        "address": "Athinaion 15",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6588314/cover?t=1690894084&platform=web"
+
     },
     {
         "id": 5,
         "name": "Gregory",
         "category": "COFFEE",
-        "address": "Agisilaou 222"
+        "address": "Agisilaou 222",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4072051/cover?t=1706412605&platform=web"
     },
     {
         "id": 3,
         "name": "Nanou Donuts House",
         "category": "DONUTS",
-        "address": "Ampelokipous 23rd Av."
+        "address": "Ampelokipous 23rd Av.",
+        "image":"https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4162660/cover?t=1647428522&platform=web"
     },
     {
         "id": 18,

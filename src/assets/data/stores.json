@@ -73,7 +73,7 @@
     "name": "StreetWok",
     "category": "ASIAN",
     "address": "Glyfada Str. 203",
-    "image": "https://i.ytimg.com/vi/G2ciuE3-TrM/maxresdefault.jpg",
+    "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg",
     "products": [
       {
         "id": "11",
@@ -113,12 +113,13 @@
       }
     ]
   },
+
   {
     "id": 3,
     "name": "Nanou Donuts House",
     "category": "DONUTS",
     "address": "Ampelokipous 23rd Av.",
-    "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg",
+    "image": "https://i.ytimg.com/vi/G2ciuE3-TrM/maxresdefault.jpg",
     "products": [
       {
         "id": "17",
@@ -155,6 +156,406 @@
         "name": "Donut Oreo",
         "category": "DONUT",
         "price": 1.99
+      }
+    ]
+  },
+
+  {
+    "id": 325,
+    "name": "The Texans Wings & Tex-Mex Burgers",
+    "category": "FAST_FOOD",
+    "address": "Eyergetoy Giavasi 13",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/3794654/cover?t=1647428522&platform=web",
+    "products": [
+      {
+        "id": "6356005",
+        "name": "BBQ Cowboy burger",
+        "category": "BURGERS",
+        "price": 11.9,
+        "description": "3 Φέτες ψωμάκι Texans , 2 μπιφτέκια μοσχαρίσια, διπλό cheddar, ντομάτα, onion ring, BBQ sauce & bacon maple relish",
+        "image": "https://cdn.e-food.gr/restaurants/3794654/menu_item/000000001156?c=1672326095"
+      },
+      {
+        "id": "5709431",
+        "name": "The Texans BBQ burger",
+        "category": "BURGERS",
+        "price": 9.9,
+        "image": "https://cdn.e-food.gr/restaurants/3794654/menu_item/000000001133?c=1672326143",
+        "description": "Ψωμάκι Texans με μπιφτέκι μοσχαρίσιο, cheddar, μπέικον, τραγανό onion ring & BBQ sauce"
+      },
+      {
+        "id": "5709432",
+        "name": "Texas BBQ Fried Chicken burger",
+        "category": "BURGERS",
+        "price": 9.7,
+        "image": "https://cdn.e-food.gr/restaurants/3794654/menu_item/000000001134?c=1672326178",
+        "description": "Ψωμάκι Texans με φιλέτο κοτόπουλο πανέ, μπέικον, cheddar, τραγανό onion ring & BBQ sauce"
+      },
+      {
+        "id": "5709434",
+        "name": "Cali Caesar`s salad",
+        "category": "SALADS",
+        "price": 9.2,
+        "image": "https://cdn.e-food.gr/restaurants/3794654/menu_item/000000001136?c=1672326246",
+        "description": "Σαλάτα με κοτόπουλο της επιλογής σας, παρμεζάνα, ντοματίνια, καλαμπόκι, κρουτόν & σπιτικό Caesar`s dressing"
+      },
+      {
+        "id": "5709439",
+        "name": "LA grilled chicken club",
+        "price": 8.9,
+        "category": "OTHER",
+        "image": "https://cdn.e-food.gr/restaurants/3794654/menu_item/000000001141?c=1672326208",
+        "description": "Με 3 ψωμάκια Texans , ψητό κοτόπουλο φιλέτο 130gr, emmental, μπέικον, ντομάτα, iceberg, μαγιονέζα & honey mustard sauce. Συνοδεύεται από πατάτες τηγανητές wedges"
+      }
+    ]
+  },
+
+  {
+    "id": 105,
+    "name": "Goody`s Burger House",
+    "category": "FAST_FOOD",
+    "address": "Str. Tompra 1, Agia Paraskeyi, 15342",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/1251237/cover?t=1675926506&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/1251237/menu_item/000000007099?c=1700754885",
+        "description": "With juicy burger, pickle sauce, mustard & ketchup",
+        "name": "Hamburger",
+        "price": 3.25,
+        "id": "1420477308",
+        "category": "BURGERS"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/1251237/menu_item/000000007100?c=1700754885",
+        "description": "With cheddar cheese laying on a delicious burger, along with pickle sauce, mustard & ketchup",
+        "name": "Cheeseburger",
+        "price": 3.5,
+        "id": "1420477309",
+        "category": "BURGERS"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/1251237/menu_item/000000007102?c=1700754885",
+        "description": "Fluffy bun filled with a delicious burger, bacon, grated cheese, tomato, lettuce & mayonnaise",
+        "name": "Golden burger",
+        "price": 4.7,
+        "id": "1420477311",
+        "category": "BURGERS"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/1251237/menu_item/000000007104?c=1700754885",
+        "description": "With a juicy burger, bacon, melted cheddar cheese, tomato, lettuce & Hellmann`s Original BBQ sauce",
+        "name": "Texas BBQ burger",
+        "price": 4.95,
+        "id": "420477313",
+        "category": "BURGERS"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/1251237/menu_item/000000007105?c=1700754885",
+        "description": "Soft bun filled with a juicy burger, bacon, lettuce, mayonnaise, melted cheddar cheese & smoked mayo sauce",
+        "name": "Cheddar Bacon burger",
+        "price": 4.7,
+        "id": "1420477314",
+        "category": "BURGERS"
+      }
+    ]
+  },
+
+  {
+    "id": 80,
+    "name": "The Big Bad Wolf",
+    "category": "SOUVLAKI",
+    "address": "Agioi Anargiroi 98",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/834186/cover?t=1694604448&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/834186/menu_item/000000001649?c=1646396305",
+        "description": "Pork gyros wrap with the ingredients of your choice",
+        "name": "Pork gyros in traditional pita bread",
+        "price": 3.7,
+        "id": "3723147",
+        "category": "SOUVLAKI"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/834186/menu_item/000000001214?c=1646396308",
+        "description": "Served with grilled pita bread",
+        "name": "Chicken skewer",
+        "price": 2.3,
+        "id": "3330325",
+        "category": "SOUVLAKI"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/834186/menu_item/000000001327?c=1687344266",
+        "description": "",
+        "name": "Potatoes fried with cheddar sauce",
+        "price": 4.8,
+        "id": "3330348",
+        "category": "OTHER"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/834186/menu_item/000000001991?c=1646396307",
+        "description": "6 items. With fried potatoes pita bread and TBBW sauce",
+        "name": "Chicken strips portion",
+        "price": 8.9,
+        "id": "7089761",
+        "category": "OTHER"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/834186/menu_item/000000001651?c=1646396305",
+        "description": "Pork skewer in pita bread with the ingredients of your choice",
+        "name": "Pork skewer in traditional pita bread",
+        "price": 3.7,
+        "id": "3723145",
+        "category": "SOUVLAKI"
+      }
+    ]
+  },
+
+  {
+    "id": 34,
+    "name": "Mikel",
+    "category": "COFFEE",
+    "address": "Ampelokipoi 72",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6799788/cover?t=1698825075&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6799788/menu_item/000000019220?c=1701888975",
+        "description": "",
+        "name": "Hot Cappuccino",
+        "price": 2.2,
+        "id": "1420683553",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6799788/menu_item/000000019235?c=1701888975",
+        "description": "",
+        "name": "Hot chocolate",
+        "price": 2.1,
+        "id": "1420683568",
+        "category": "BEVERAGES"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6799788/menu_item/000000019253?c=1701888975",
+        "description": "",
+        "name": "Cold espresso",
+        "price": 2.4,
+        "id": "1420683586",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6799788/menu_item/000000019259?c=1701888975",
+        "description": "",
+        "price": 2.2,
+        "id": "420683592",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6799788/menu_item/000000019236?c=1701888975",
+        "description": "",
+        "name": "Hot chocolate white",
+        "price": 2.4,
+        "id": "1420683569",
+        "category": "BEVERAGES"
+      }
+    ]
+  },
+
+  {
+    "id": 4,
+    "name": "Coffee Lab",
+    "category": "COFFEE",
+    "address": "Athinaion 15",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6588314/cover?t=1690894084&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6588314/menu_item/000000029820?c=1703259808",
+        "description": "With Ice, Milk, Nutella, Vanilla Powder, Chocolate Syrup & Up Donut Chocolate",
+        "name": "Chocco Ball with donut",
+        "price": 3.7,
+        "id": "1420979616",
+        "category": "COFFEE"
+      },
+
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6588314/menu_item/000000028611?c=1697453587",
+        "description": "",
+        "name": "Freddo espresso",
+        "price": 2,
+        "id": "1420020582",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6588314/menu_item/000000028614?c=1697453587",
+        "description": "",
+        "name": "Cappuccino",
+        "price": 1.90,
+        "id": "1420020585",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6588314/menu_item/000000028616?c=1697453587",
+        "description": "",
+        "name": "Freddo cappuccino",
+        "price": 2.1,
+        "id": "1420020587",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6588314/menu_item/000000028627?c=1697453588",
+        "description": "",
+        "name": "Caramel latte",
+        "price": 2.6,
+        "id": "1420020598",
+        "category": "COFFEE"
+      }
+    ]
+  },
+
+  {
+    "id": 5,
+    "name": "Gregory",
+    "category": "COFFEE",
+    "address": "Agisilaou 222",
+    "image": " https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4072051/cover?t=1706412605&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/4072051/menu_item/000000000065?c=1657023243",
+        "description": ".",
+        "name": "Cappuccino Freddo",
+        "price": 2.5,
+        "id": "5757641",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/4072051/menu_item/000000000076?c=1687782489",
+        "description": "",
+        "name": "Vegan Cappuccino Freddo",
+        "price": 2.8,
+        "id": "5757652",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/4072051/menu_item/000000000077?c=1657023247",
+        "description": "",
+        "name": "Lacto Free Cappuccino Freddo",
+        "price": 2.8,
+        "id": "5757653",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/4072051/menu_item/000000000066?c=1657023243",
+        "description": "",
+        "name": "Espresso Freddo",
+        "price": 2.3,
+        "id": "5757642",
+        "category": "COFFEE"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/4072051/menu_item/000000000069?c=1657023244",
+        "description": "",
+        "name": "Crema Freddo",
+        "price": 2.7,
+        "id": "5757645",
+        "category": "COFFEE"
+      }
+    ]
+  },
+
+  {
+    "id": 12,
+    "name": "Pizza Fan",
+    "category": "PIZZA",
+    "address": "Ippokrateiou 35",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6494006/cover?t=1687778289&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6494006/menu_item/000000000468?c=1693624423",
+        "description": "BBQ sauce, Gouda, Pulled Pork, pepers, Lemon-Mayo.",
+        "name": "Pulled Pork BBQ",
+        "price": 8.9,
+        "id": "922956188",
+        "category": "PIZZA"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6494006/menu_item/000000000469?c=1693624424",
+        "description": "Meatballs, Gouda, caramelized onion, green pepers, red sauce.",
+        "name": "Meatballs",
+        "price": 9.9,
+        "id": "922956189",
+        "category": "PIZZA"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6494006/menu_item/000000000470?c=1693624423",
+        "description": "Gouda, sausage, Crosscut potatoes, onions, Mustard-BBQ sauce.",
+        "name": "Potato - Sausage",
+        "price": 8.7,
+        "id": "922956190",
+        "category": "PIZZA"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6494006/menu_item/000000000448?c=1693624423",
+        "description": "Philadelphia, Mozzarella, Peperoni, sriracha sauce.",
+        "name": "Bianca Piccante peperoni (Italian Fan)",
+        "price": 8.5,
+        "id": "922956191",
+        "category": "PIZZA"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/6494006/menu_item/000000000449?c=1693624423",
+        "description": "Philadelphia, Mozzarella, mushrooms, parsley .",
+        "name": "Bianca Funghi (Italian Fan)",
+        "price": 7.7,
+        "id": "922956192",
+        "category": "PIZZA"
+      }
+    ]
+  },
+
+  {
+    "id": 8,
+    "name": "Roma Pizza",
+    "category": "PIZZA",
+    "address": "Menelaou 22",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/191644/cover?t=1651067911&platform=web",
+    "products": [
+      {
+        "image": "https://cdn.e-food.gr/restaurants/191644/menu_item/000000000004?c=1695390233",
+        "description": "4 items. Tomato, feta cheese & oregano",
+        "name": "Scrambled bread with tomato & feta cheese",
+        "price": 3,
+        "id": "1249749",
+        "category": "SALADS"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/191644/menu_item/000000001794?c=1695397656",
+        "description": "With tomato sauce, gouda, fresh tomato, olives, feta & green pepper",
+        "name": "Greek land",
+        "price": 8.8,
+        "id": "1354103211",
+        "category": "PIZZA"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/191644/menu_item/000000001675?c=1681214473",
+        "description": "Tomato sauce, gouda, chicken & Philadelphia",
+        "name": "Chicken cheese",
+        "price": 9.6,
+        "id": "62258999",
+        "category": "PIZZA"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/191644/menu_item/000000001662?c=1695390233",
+        "description": "Salad with lettuce, chicken, cheese, cruton & Caesar`s dressing",
+        "name": "Caesar`s salad",
+        "price": 6.6,
+        "id": "62258986",
+        "category": "SALADS"
+      },
+      {
+        "image": "https://cdn.e-food.gr/restaurants/191644/menu_item/000000001667?c=1695390234",
+        "description": "With tomato sauce, gouda & pepperoni",
+        "name": "Pepperoni",
+        "price": 8.8,
+        "id": "62258991",
+        "category": "PIZZA"
       }
     ]
   }
