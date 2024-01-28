@@ -17,9 +17,7 @@ export class FamousStoresComponent {
   storesList: any;
   service = inject(StoresService);
 
-  constructor() {
-    console.log(this.category)
-  }
+  constructor() {}
   ngOnInit(): void {
 
     this.service.getFamousStores().subscribe(
@@ -27,8 +25,6 @@ export class FamousStoresComponent {
         next: (response: any) => {
           this.storesList = response
           if (this.category) {
-            console.log(this.category)
-            console.log(response)
             let stores = response.filter((current: any) => current.category == this.category)
             this.storesList = stores;
           }

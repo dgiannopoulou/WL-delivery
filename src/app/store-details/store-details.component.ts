@@ -5,11 +5,13 @@ import { CartService } from '../services/cart.service';
 import { RestaurantBannerComponent } from '../restaurant-banner/restaurant-banner.component';
 import { RestaurantMenuComponent } from '../restaurant-menu/restaurant-menu.component';
 import { CartComponent } from '../cart/cart.component';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-store-details',
   standalone: true,
-  imports: [CurrencyPipe, RestaurantBannerComponent, RestaurantMenuComponent, CartComponent],
+  imports: [CurrencyPipe, RestaurantBannerComponent, RestaurantMenuComponent, CartComponent, CommonModule],
   templateUrl: './store-details.component.html',
   styleUrl: './store-details.component.css'
 })

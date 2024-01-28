@@ -1,18 +1,18 @@
 <div class="card p-3 mt-5 mb-5">
   <img
-    [src]="data.image"
+    [src]="data?.image"
     class="bannerImage"
-    alt="{{ data.name }}"
+    alt="{{ data?.name }}"
   />
   <div class="card-body">
-    <h3 class="card-title">{{ data.name }}</h3>
+    <h3 class="card-title">{{ data?.name }}</h3>
     <div class="row">
       <div class="d-flex justify-content-between">
         <p class="card-text">
-          {{ data.category }}
+          {{ data?.category }}
         </p>
         <p class="card-text">
-          {{ data.address }}
+          {{ data?.address }}
         </p>
       </div>
     </div>
