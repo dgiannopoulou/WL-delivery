@@ -61,6 +61,16 @@ export class CartService {
     return Object.values(this.cartProducts);
   }
 
+  // This function returns the sum of the quantities products as an object.
+  
+  getAllCartProducts(): number {
+    const storedCartItems = localStorage.getItem('cartItems');
+
+    //Calculate the sum of quantities
+    const totalCount = Object.values(this.cartProducts).reduce((count, cartItem) => count + cartItem.quantity, 0);
+    return totalCount;
+  }
+
   // This function converts our object into an array and calculates iteratively the total cost of the products in our cart.
   calculateTotal(): number {
     return Object.values(this.cartProducts).reduce((total, cartItem) => {
