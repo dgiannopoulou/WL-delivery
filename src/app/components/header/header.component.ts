@@ -32,7 +32,7 @@ export class HeaderComponent {
   ngOnInit() {
     let url = window.location.href.toString();
     console.log(url);
-    if (url.includes('account')) {
+    if (url.includes('account')|| url.includes('checkout')) {
       this.searchBar = false;
     }else{
       this.searchBar = true;
