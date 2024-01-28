@@ -33,6 +33,15 @@ export class CartService {
     this.listChanged.emit(); 
   }
 
+  // Removes all quantity of a product from cart and refreshes the localstorage.
+  removeAllProduct(product: any) {
+    if (this.cartProducts[product.id]) {
+      delete this.cartProducts[product.id];
+    }
+    localStorage.setItem('cartItems', JSON.stringify(this.cartProducts));
+    this.listChanged.emit(); 
+  }
+
   cleanList():void {
     localStorage.removeItem('cartItems');
   }
