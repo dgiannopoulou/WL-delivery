@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { CartComponent } from '../cart/cart.component';
 import { CartStatusComponent } from '../cart-status/cart-status.component';
+import { UserLoginService } from '../services/user-login.service';
 
 @Component({
   selector: 'app-checkout-page',
@@ -14,18 +15,32 @@ import { CartStatusComponent } from '../cart-status/cart-status.component';
 export class CheckoutPageComponent {
   form!: FormGroup;
   isCardPaymentActive: boolean = false;
-
+  UserLoginService: UserLoginService = inject(UserLoginService);
+  user: any;
+  ngOnInit() {
+    this.UserLoginService.viewProfile()
+      .subscribe(
+        {
+          next: data => {
+            this.user = data
+            this.setFormValues();
+            
+          }
+        }
+      );
+      this.listenForPaymentMethodChange();
+  }
   constructor() {
-    this.setFormValues();
-    this.listenForPaymentMethodChange();
+    
+    
+   
   }
 
   setFormValues() {
     this.form = new FormGroup({
-      firstName: new FormControl("", Validators.required),
-      lastName: new FormControl("", Validators.required),
-      username: new FormControl("", Validators.required),
-      email: new FormControl(""),
+      firstName: new FormControl(this.user.name, Validators.required),
+      lastName: new FormControl(this.user.lastName, Validators.required),
+      email: new FormControl(this.user.email),
       address: new FormControl("", Validators.required),
       address2: new FormControl("", Validators.required),
       zip: new FormControl("", Validators.required),
@@ -78,3 +93,5 @@ export class CheckoutPageComponent {
     }
   }
 }
+         
+
