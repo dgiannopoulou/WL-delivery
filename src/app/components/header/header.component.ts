@@ -4,7 +4,7 @@ import { RegisterFormComponent } from '../register-form/register-form.component'
 import { ProfileAvatarComponent } from '../profile-avatar/profile-avatar.component';
 import { CommonModule } from '@angular/common';
 import { CartStatusComponent } from '../../cart-status/cart-status.component';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 
 
 @Component({
@@ -22,6 +22,10 @@ import { NavigationEnd, Router, RouterLink } from '@angular/router';
 export class HeaderComponent {
 
   router: Router = inject(Router)
+  activatedRoute: ActivatedRoute = inject(ActivatedRoute)
+  
+
+
 
   loggedIn?: boolean;
   userLog?: boolean;
@@ -35,8 +39,13 @@ export class HeaderComponent {
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        const root = this.router.routerState.snapshot.root;
+        const routeUrl = root.url.map(url => url.path);
+        console.log(root);
+        console.log(this.router.routerState);
+
         let url = window.location.href.toString();
-        console.log(url);
+        //console.log(url);
 
         if (url.includes('account') || url.includes('checkout')) {
           this.searchBar = false;

@@ -49,7 +49,6 @@ export class AccountDetailsComponent {
           this.user = user;
           console.log("valid edit!");
           this.resetEditForm();
-          this.router.navigate(['account/profile']);
         }
       );
     } 
