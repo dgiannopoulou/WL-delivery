@@ -3,12 +3,15 @@
         "id": 1,
         "name": "McDonald's",
         "category": "FAST_FOOD",
-        "address": "Syntagma 15" 
+        "address": "Syntagma 15",
+        "image": "https://img.freepik.com/premium-photo/fast-food-assortment-junk-food-concept-unhealthy-food-heart-teeth-skin-figure_839035-83490.jpg"
+
     },
     {
         "id": 105,
         "name": "Goodys Burger House",
         "category": "FAST_FOOD",
-        "address": "Ampelokipous 23rd Av."
+        "address": "Ampelokipous 23rd Av.",
+        "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/1251237/cover?t=1675926506&platform=web"
     }
 ]

@@ -9,6 +9,7 @@ import { AccountDetailsComponent } from './components/account-details/account-de
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
 import { CartComponent } from './cart/cart.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 export const routes: Routes = [
     {path: 'home', component:HomepageComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path: 'checkout', component:CheckoutPageComponent},
     {path: 'account/profile', component:AccountComponent},
     {path: 'account/orders', component:AccountOrdersComponent},
+    {path: 'account/change-password', component:ChangePasswordComponent},
     {path: 'account/orders/:id', component:OrderDetailsComponent},
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: "**", component: Error404Component}

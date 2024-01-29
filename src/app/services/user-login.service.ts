@@ -43,4 +43,9 @@ export class UserLoginService {
   editProfile(data: any){
     return this.http.post(this.url, JSON.stringify(data))
   }
+
+  editPassword(data: any){
+    return this.http.post(this.url, JSON.stringify(data))
+  }
+
 }

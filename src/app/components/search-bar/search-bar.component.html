@@ -1,38 +1,37 @@
-  <form class="row g-1" [formGroup]="form" (submit)="onSubmit()">
-    <div class="col-auto search-container">
-      <input formControlName="searchData" placeholder="Search store" class="form-control search-input" (ngModelChange)="onSearchChange()">
-      <button *ngIf=form.dirty class="clear-btn" (click)="clearForm()">X</button>
-    </div>
-    <div class="col-auto">
-      <button class="btn btn-danger" [disabled]=!form.dirty >Search</button>
-    </div>
-  </form>
-
-  <div class="results" [hidden]="!searchResults">
-    @for(store of storeList; track store.id){
-    <div class="card">
-      <div class="row g-0 result-item" (click)="selectStore(store)">
-        <div class="col-md-4">
-          <img
-            src="https://www.muraldecal.com/en/img/orp081-jpg/folder/products-listado-merchanthover/stickers-google-chrome.jpg"
-            class="img-fluid rounded-start" style="max-width:64px;width:100%" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">{{store.name}}</h5>
-            <p class="card-text">{{store.address}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    }
-    @empty {
-    <div class="card">
-      <div class="col-md-12">
-        <div class="card-body">
-          <p class="card-text">No data available</p>
-        </div>
-      </div>
-    </div>
-    }
+<form class="row g-1" [formGroup]="form" (submit)="onSubmit()">
+  <div class="col-auto search-container">
+    <input formControlName="searchData" placeholder="Search store" class="form-control search-input"
+      (ngModelChange)="onSearchChange()">
+    <button *ngIf=form.dirty class="clear-btn" (click)="clearForm()">X</button>
   </div>
+  <div class="col-auto">
+    <button class="btn btn-danger" [disabled]=!form.dirty>Search</button>
+  </div>
+</form>
+
+<div class="results" [hidden]="!searchResults">
+  @for(store of storeList; track store.id){
+  <div class="card">
+    <div class="row g-0 result-item" (click)="selectStore(store)">
+      <div class="col-md-4">
+        <img src="{{store.image}}" class="img-fluid rounded-start w-100" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h6 class="card-title">{{store.name}}</h6>
+          <p class="card-text">{{store.address}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+  @empty {
+  <div class="card">
+    <div class="row g-0 result-item">
+      <div class="card-body">
+        <h6 class="card-text text-center">No data available</h6>
+      </div>
+    </div>
+  </div>
+  }
+</div>
