@@ -6,7 +6,7 @@
                 <img [src]="store.image" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{store.name}}</h5>
-                    <p class="card-text">{{store.category}}<br>{{store.address}}</p>
+                    <p class="card-text">{{store.category.replace('_', ' ')}}<br>{{store.address}}</p>
                     <a [routerLink]="['/stores', store.id]" class="btn btn-primary">Go to store...</a>
                 </div>
             </div>
