@@ -16,12 +16,12 @@
     }
     <div class="container">
         <div class="card p-3 mb-2 cardContainer">
-            <div class="columns">
+            <div class="columns col-lg-3">
                 <p class="fw-bold">{{product?.name}}</p>
                 <h6>{{product?.price}}€</h6>
             </div>
-            <div>{{product?.description}}</div>
-            <app-add-remove-buttons [product]="product"></app-add-remove-buttons>
+            <div class="col-lg-6">{{product?.description}}</div>
+            <app-add-remove-buttons class="col-lg-3" [product]="product"></app-add-remove-buttons>
         </div>
     </div>
 </div>
