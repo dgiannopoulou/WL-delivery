@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,7 @@ export class OrdersService {
 
   url = '/assets/data/my_orders/my_orders.json'
   urlDetails = '/assets/data/my_orders/my_orders_{id}.json'
-  urlDetailsRated = '/assets/data/my_orders/my_orders_{id}_rated.json'
-
+  
   getOrders() {
     return this.http.get(this.url);
   }
@@ -21,16 +21,13 @@ export class OrdersService {
     return this.http.get( this.urlDetails.replace("{id}",id) );
   }
 
-  setOrderRating(id: string, rating: number) {
-    const options = {
-      headers: new HttpHeaders({
-        'content-Type': 'application/json',
-        'Accept': "application/json"
-      })
+  // setOrderRating(id: string, rating: number) {
+  //   return this.http.post(...)
+  // }
+
+    setOrderRating(rating:number){
+      return of(rating)
     }
-    return this.http.post(this.urlDetailsRated.replace("{id}", id),
-      JSON.stringify([id, rating]), options)
-  }
 
   constructor() { }
 }
