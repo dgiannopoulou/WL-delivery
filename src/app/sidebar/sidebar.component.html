@@ -8,18 +8,15 @@
           <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false">
             Categories
           </button>
-          <div class="text-decoration-none" id="category-collapse">
+          <div id="category-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              @for (ct of categories; track $index) { 
-              <li>
-                  <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="link-dark rounded">{{ct.category}}</a>
+              <li *ngFor="let ct of categories; let i = index">
+                <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="link-dark rounded" [class.text-decoration-none]="true">{{ct.category.replace('_', ' ')}}</a>
               </li>
-              }
             </ul>
           </div>
         </li>
       </ul>
     </div>
   </div>
-  
   
