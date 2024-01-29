@@ -6,6 +6,7 @@ import { RestaurantBannerComponent } from '../restaurant-banner/restaurant-banne
 import { RestaurantMenuComponent } from '../restaurant-menu/restaurant-menu.component';
 import { CartComponent } from '../cart/cart.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -22,18 +23,22 @@ export class StoreDetailsComponent {
   storeDetails : any;
 
   service = inject(StoresService);
+  activatedRoute = inject(ActivatedRoute);
+
 
   ngOnInit(): void {
-    this.service.getStores().subscribe(
-      {
-        next: response => {
-
-          let stores= response.filter((current:any) => current.id == this.id)
-          this.storeDetails = stores[0];
-
+    this.activatedRoute.params
+      .subscribe({
+        next: _ => {
+          this.service.getStores().subscribe(
+            {
+              next: response => {
+                let stores = response.filter((current: any) => current.id == this.id)
+                this.storeDetails = stores[0];
+              }
+            })
         }
-      }
-    )
+      })
   }
 
   constructor(public cart:CartService){}

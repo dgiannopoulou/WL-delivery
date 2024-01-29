@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -41,11 +42,13 @@ export class UserLoginService {
   }
 
   editProfile(data: any){
-    return this.http.post(this.url, JSON.stringify(data))
+    // return this.http.post(this.url, JSON.stringify(data))
+    return of(data)
   }
 
   editPassword(data: any){
-    return this.http.post(this.url, JSON.stringify(data))
+    //return this.http.post(this.url, JSON.stringify(data))
+    return of(data)
   }
 
 }
