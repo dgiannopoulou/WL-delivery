@@ -4,6 +4,7 @@
     "name": "McDonald's",
     "category": "FAST_FOOD",
     "address": "Syntagma 15",
+    "rate": 4,
     "image": "https://img.freepik.com/premium-photo/fast-food-assortment-junk-food-concept-unhealthy-food-heart-teeth-skin-figure_839035-83490.jpg",
     "products": [
       {
@@ -73,6 +74,7 @@
     "name": "StreetWok",
     "category": "ASIAN",
     "address": "Glyfada Str. 203",
+    "rate": 4,
     "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg",
     "products": [
       {
@@ -118,6 +120,7 @@
     "name": "Nanou Donuts House",
     "category": "DONUTS",
     "address": "Ampelokipous 23rd Av.",
+    "rate": 4.5,
     "image": "https://i.ytimg.com/vi/G2ciuE3-TrM/maxresdefault.jpg",
     "products": [
       {
@@ -163,6 +166,7 @@
     "name": "The Texans Wings & Tex-Mex Burgers",
     "category": "FAST_FOOD",
     "address": "Eyergetoy Giavasi 13",
+    "rate": 5,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/3794654/cover?t=1647428522&platform=web",
     "products": [
       {
@@ -212,6 +216,7 @@
     "name": "Goody`s Burger House",
     "category": "FAST_FOOD",
     "address": "Str. Tompra 1, Agia Paraskeyi, 15342",
+    "rate": 3.5,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/1251237/cover?t=1675926506&platform=web",
     "products": [
       {
@@ -261,6 +266,7 @@
     "name": "The Big Bad Wolf",
     "category": "SOUVLAKI",
     "address": "Agioi Anargiroi 98",
+    "rate": 4,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/834186/cover?t=1694604448&platform=web",
     "products": [
       {
@@ -310,6 +316,7 @@
     "name": "Mikel",
     "category": "COFFEE",
     "address": "Ampelokipoi 72",
+    "rate": 4,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6799788/cover?t=1698825075&platform=web",
     "products": [
       {
@@ -358,6 +365,7 @@
     "name": "Coffee Lab",
     "category": "COFFEE",
     "address": "Athinaion 15",
+    "rate": 2,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6588314/cover?t=1690894084&platform=web",
     "products": [
       {
@@ -407,6 +415,7 @@
     "name": "Gregory",
     "category": "COFFEE",
     "address": "Agisilaou 222",
+    "rate": 5,
     "image": " https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4072051/cover?t=1706412605&platform=web",
     "products": [
       {
@@ -456,6 +465,7 @@
     "name": "Pizza Fan",
     "category": "PIZZA",
     "address": "Ippokrateiou 35",
+    "rate": 4,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6494006/cover?t=1687778289&platform=web",
     "products": [
       {
@@ -505,6 +515,7 @@
     "name": "Roma Pizza",
     "category": "PIZZA",
     "address": "Menelaou 22",
+    "rate": 5,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/191644/cover?t=1651067911&platform=web",
     "products": [
       {
@@ -554,6 +565,7 @@
     "name": "Espuma coffee trends",
     "category": "COFFEE",
     "address": "Peloponisou 12",
+    "rate": 4,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4023682/cover?t=1647428522&platform=web",
     "products": [
       {
