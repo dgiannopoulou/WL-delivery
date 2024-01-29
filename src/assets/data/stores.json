@@ -113,7 +113,6 @@
       }
     ]
   },
-
   {
     "id": 3,
     "name": "Nanou Donuts House",
@@ -159,7 +158,6 @@
       }
     ]
   },
-
   {
     "id": 325,
     "name": "The Texans Wings & Tex-Mex Burgers",
@@ -209,7 +207,6 @@
       }
     ]
   },
-
   {
     "id": 105,
     "name": "Goody`s Burger House",
@@ -259,7 +256,6 @@
       }
     ]
   },
-
   {
     "id": 80,
     "name": "The Big Bad Wolf",
@@ -309,7 +305,6 @@
       }
     ]
   },
-
   {
     "id": 34,
     "name": "Mikel",
@@ -358,7 +353,6 @@
       }
     ]
   },
-
   {
     "id": 4,
     "name": "Coffee Lab",
@@ -374,7 +368,6 @@
         "id": "1420979616",
         "category": "COFFEE"
       },
-
       {
         "image": "https://cdn.e-food.gr/restaurants/6588314/menu_item/000000028611?c=1697453587",
         "description": "",
@@ -409,7 +402,6 @@
       }
     ]
   },
-
   {
     "id": 5,
     "name": "Gregory",
@@ -459,7 +451,6 @@
       }
     ]
   },
-
   {
     "id": 12,
     "name": "Pizza Fan",
@@ -509,7 +500,6 @@
       }
     ]
   },
-
   {
     "id": 8,
     "name": "Roma Pizza",
@@ -556,6 +546,47 @@
         "price": 8.8,
         "id": "62258991",
         "category": "PIZZA"
+      }
+    ]
+  },
+  {
+    "id": 976,
+    "name": "Espuma coffee trends",
+    "category": "COFFEE",
+    "address": "Peloponisou 12",
+    "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/4023682/cover?t=1647428522&platform=web",
+    "products": [
+      {
+        "images": "https://cdn.e-food.gr/restaurants/4023682/menu_item/000000001217?c=1623152648",
+        "description": "",
+        "name": "Freddo espresso",
+        "price": 1.8,
+        "id": "5332873",
+        "category": "COFFEE"
+      },
+      {
+        "images": "https://cdn.e-food.gr/restaurants/4023682/menu_item/000000001218?c=1623152668",
+        "description": "",
+        "name": "Cappuccino",
+        "price": 1.7,
+        "id": "5332755",
+        "category": "COFFEE"
+      },
+      {
+        "images": "https://cdn.e-food.gr/restaurants/4023682/menu_item/000000001626?c=1623152526",
+        "description": "With gouda & bacon",
+        "name": "Peinirli",
+        "price": 2.9,
+        "id": "5334314",
+        "category": "OTHER"
+      },
+      {
+        "images": "https://cdn.e-food.gr/restaurants/4023682/menu_item/000000000803?c=1623152604",
+        "description": "Handmade",
+        "name": "Greek bougatsa with cream",
+        "price": 2.5,
+        "id": "5332752",
+        "category": "OTHER"
       }
     ]
   }
