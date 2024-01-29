@@ -3,7 +3,7 @@ import { CartService } from '../services/cart.service';
 import { CommonModule } from '@angular/common';
 import { CartItem } from '../interfaces/CartItem';
 import { AddRemoveButtonsComponent } from '../add-remove-buttons/add-remove-buttons.component';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,12 +14,17 @@ import { RouterLink } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   cartProducts: CartItem[] = [];
+  isCheckoutRoute: boolean = false;
 
-  constructor(public cart: CartService) { }
+  constructor(public cart: CartService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.cartProducts = this.cart.getCartProducts();
     this.subscribeToProductChanges();
+
+    this.route.url.subscribe(segments => {
+      this.isCheckoutRoute = segments[segments.length - 1]?.path.endsWith('checkout');
+    });
   }
 
   private subscribeToProductChanges(): void {
