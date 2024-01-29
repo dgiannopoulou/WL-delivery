@@ -17,30 +17,28 @@ export class CheckoutPageComponent {
   isCardPaymentActive: boolean = false;
   UserLoginService: UserLoginService = inject(UserLoginService);
   user: any;
+  
   ngOnInit() {
+    this.setFormValues();
     this.UserLoginService.viewProfile()
       .subscribe(
         {
           next: data => {
             this.user = data
-            this.setFormValues();
-            
+            this.updateFormValues();
           }
         }
       );
       this.listenForPaymentMethodChange();
   }
-  constructor() {
-    
-    
-   
-  }
+
+  constructor() {}
 
   setFormValues() {
     this.form = new FormGroup({
-      firstName: new FormControl(this.user.name, Validators.required),
-      lastName: new FormControl(this.user.lastName, Validators.required),
-      email: new FormControl(this.user.email),
+      firstName: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
+      email: new FormControl(""),
       address: new FormControl("", Validators.required),
       address2: new FormControl("", Validators.required),
       zip: new FormControl("", Validators.required),
@@ -57,6 +55,14 @@ export class CheckoutPageComponent {
     this.form.get("creditCardNumber")?.disable();
     this.form.get("expiration")?.disable();
     this.form.get("cvv")?.disable();
+  }
+
+  updateFormValues() {
+    this.form.patchValue({
+      firstName: this.user.name,
+      lastName: this.user.lastName,
+      email: this.user.email,
+    });
   }
 
   onSubmit() {
