@@ -1,33 +1,46 @@
-<div class="container">
-  <div class="emptyBasket" *ngIf="cartProducts.length === 0">
-    <h3>Cart is empty</h3>
-    <img
-      class="shoppingImage"
-      src="../assets/images/basket-shopping.svg"
-      alt="Shopping basket"
-    />
-  </div>
-  <div *ngIf="cartProducts.length > 0">
-    <h4 class="text-center mb-3">My order</h4>
-    <table class="table table-hover">
-      <tbody>
-        @for (cartItem of cartProducts; track $index) {
-        <tr>
-          <td>{{ cartItem.quantity }}</td>
-          <td>{{ cartItem.product.name }}</td>
-          <td>{{ cartItem.product.price * cartItem.quantity | number:'1.2-2'}}€</td>
-          <td>
-            <button class="btn btn-danger" (click)="removeFromCart(cartItem.product)"><i class="bi bi-plus"></i>Remove</button>
-          </td>
-        </tr>
-        }
-      </tbody>
-    </table>
-    <div class="checkoutContainer">
-      <h5 class="totalPrice fw-bold">
-        Total: {{getTotal() | number:'1.2-2'}}€
-      </h5>
-      <button class="mt-2 btn btn-success" routerLink="/checkout">Checkout</button>
+<div class="shoppingProducts">
+  <div class="container">
+    <div class="emptyBasket" *ngIf="cartProducts.length === 0">
+      <h3>Cart is empty</h3>
+      <img
+        class="shoppingImage"
+        src="../assets/images/basket-shopping.svg"
+        alt="Shopping basket"
+      />
+    </div>
+    <div *ngIf="cartProducts.length > 0">
+      <h4 class="text-center mb-3">My order</h4>
+      <table class="table table-hover">
+        <tbody>
+          @for (cartItem of cartProducts; track $index) {
+          <tr>
+            <td>{{ cartItem.quantity }}</td>
+            <td>{{ cartItem.product.name }}</td>
+            <td>
+              {{
+                cartItem.product.price * cartItem.quantity | number : "1.2-2"
+              }}€
+            </td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="removeFromCart(cartItem.product)"
+              >
+                <i class="bi bi-plus"></i>Remove
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+      <div class="checkoutContainer">
+        <h5 class="totalPrice fw-bold">
+          Total: {{ getTotal() | number : "1.2-2" }}€
+        </h5>
+        <button class="mt-2 btn btn-success" routerLink="/checkout">
+          Checkout
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -1,14 +1,9 @@
-
 .shoppingCart{
     height: 80vh;
     position: -webkit-sticky;
     position: sticky;
     top: 20px;
     padding: 1rem 1rem 0 1rem;
-}
-
-.shoppingProducts {
-    overflow: auto;
 }
 
 .cart-content {
