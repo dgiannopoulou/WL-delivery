@@ -37,7 +37,7 @@
         <h5 class="totalPrice fw-bold">
           Total: {{ getTotal() | number : "1.2-2" }}€
         </h5>
-        <button class="mt-2 btn btn-success" routerLink="/checkout">
+        <button id="checkoutButton" class="mt-2 btn btn-success" routerLink="/checkout" *ngIf="!isCheckoutRoute">
           Checkout
         </button>
       </div>
