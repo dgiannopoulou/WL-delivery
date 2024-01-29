@@ -4,7 +4,7 @@
     <div class="card">
         <div class="row">
             <div class="col-sm-12">
-                <div class="card-block">
+                <div class="card-block m-2">
                     <h6 class="b-b-default">Information</h6>
                     <div class="row">
                         <div class="col-sm-6">
@@ -17,11 +17,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="card-block m-2">
+                    <h6 class=" b-b-default ">Contact</h6>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p class>Email</p>
+                            <h6 class="text-muted">{{user.email}}</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Phone</p>
+                            <h6 class="text-muted">{{user.phone}}</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="card">
+    <!-- <div class="card">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-block">
@@ -39,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div>
         <button type="button" class="btn btn-primary float-end m-2" data-bs-toggle="modal"
