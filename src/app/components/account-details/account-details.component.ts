@@ -43,11 +43,11 @@ export class AccountDetailsComponent {
   }
 
   updateFormValues() {
-    this.editForm = new FormGroup({
-      name: new FormControl(this.user?.name, Validators.required),
-      lastName: new FormControl(this.user?.lastName, Validators.required),
-      email: new FormControl(this.user?.email, [Validators.required, Validators.email]),
-      phone: new FormControl(this.user?.phone, [Validators.required, Validators.pattern('[- +()0-9]{10,12}')]),
+    this.editForm.patchValue({
+      name: this.user.name,
+      lastName: this.user.lastName,
+      email: this.user.email,
+      phone: this.user.phone
     });
   }
 
