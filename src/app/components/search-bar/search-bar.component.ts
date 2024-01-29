@@ -45,13 +45,18 @@ export class SearchBarComponent {
 
   onSubmit() {
     let name = this.form.get("searchData")?.value;
-    console.log(name);
+    //console.log(name);
     this.SearchService.searchStore(name).subscribe(   
       (storeList) => { this.storeList =  storeList;
-      console.log(storeList);
+      //console.log(storeList);
       this.searchResults=true;
     }
     );
+  }
+
+  onEnter(event:Event){
+    event.preventDefault();
+    this.onSubmit();
   }
 
   selectStore(store:any){
