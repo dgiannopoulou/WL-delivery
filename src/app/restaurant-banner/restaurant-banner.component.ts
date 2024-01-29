@@ -1,9 +1,10 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RatingStarsComponent } from '../rating-stars/rating-stars.component';
 
 @Component({
   selector: 'app-restaurant-banner',
   standalone: true,
-  imports: [],
+  imports: [RatingStarsComponent],
   templateUrl: './restaurant-banner.component.html',
   styleUrl: './restaurant-banner.component.css'
 })

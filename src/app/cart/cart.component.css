@@ -17,6 +17,8 @@
     padding: 1rem 0 1rem 0;
     position: sticky;
     bottom: 0;
+    width: 100%;
+
 }
 
 button {
