@@ -35,8 +35,10 @@ export class HeaderComponent {
   ngOnInit() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        let url = window.location.href.toString();
-        console.log(url);
+        let url = this.router.routerState.snapshot.url.toString();
+        //let url = event.url
+        //let url = window.location.href.toString();
+        console.log("url " + url);
 
         if (url.includes('account') || url.includes('checkout')) {
           this.searchBar = false;

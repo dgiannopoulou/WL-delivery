@@ -40,18 +40,16 @@ export class OrderDetailsComponent {
       this.selectedRating = rating;
   }
 
-  rateOrder(){
-    this.orderService.setOrderRating(this.order.id,this.selectedRating)
-            .subscribe({
-              next: data => {
-                console.log(data);
-                this.order = data;
-                console.log(this.order.rate)
+  rateOrder() {
+    this.orderService.setOrderRating(this.selectedRating)
+      .subscribe({
+        next: data => {
+          console.log(data);
+          this.order.rate = data;
+          console.log(this.order.rate)
 
-              }
-            })
-  
-
+        }
+      })
     console.log(this.selectedRating)
   };
 

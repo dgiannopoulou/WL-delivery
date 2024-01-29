@@ -1,4 +1,4 @@
-<form class="row g-1" [formGroup]="form" (submit)="onSubmit()">
+<form class="row g-1" [formGroup]="form" (submit)="onSubmit()" (keydown.enter)="onEnter($event)">
   <div class="col-auto search-container">
     <input formControlName="searchData" placeholder="Search store" class="form-control search-input"
       (ngModelChange)="onSearchChange()">
@@ -14,7 +14,7 @@
   <div class="card">
     <div class="row g-0 result-item" (click)="selectStore(store)">
       <div class="col-md-4">
-        <img src="{{store.image}}" class="img-fluid rounded-start w-100" alt="...">
+        <img src="{{store.image}}" class="img-fluid rounded-start w-100" alt="Store image">
       </div>
       <div class="col-md-8">
         <div class="card-body">

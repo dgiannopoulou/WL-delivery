@@ -21,12 +21,13 @@ export class AccountDetailsComponent {
 
 
   ngOnInit() {
+    this.setFormValues();
     this.UserLoginService.viewProfile()
       .subscribe(
         {
           next: data => {
             this.user = data
-            this.setFormValues();
+            this.updateFormValues();
           }
         }
       );
@@ -34,10 +35,19 @@ export class AccountDetailsComponent {
 
   setFormValues() {
     this.editForm = new FormGroup({
-      name: new FormControl(this.user.name, Validators.required),
-      lastName: new FormControl(this.user.lastName, Validators.required),
-      email: new FormControl(this.user.email, [Validators.required, Validators.email]),
-      phone: new FormControl(this.user.phone, [Validators.required, Validators.pattern('[- +()0-9]{10,12}')]),
+      name: new FormControl("", Validators.required),
+      lastName: new FormControl("", Validators.required),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      phone: new FormControl("", [Validators.required, Validators.pattern('[- +()0-9]{10,12}')]),
+    });
+  }
+
+  updateFormValues() {
+    this.editForm.patchValue({
+      name: this.user.name,
+      lastName: this.user.lastName,
+      email: this.user.email,
+      phone: this.user.phone
     });
   }
 
@@ -49,7 +59,6 @@ export class AccountDetailsComponent {
           this.user = user;
           console.log("valid edit!");
           this.resetEditForm();
-          this.router.navigate(['account/profile']);
         }
       );
     } 
