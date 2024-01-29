@@ -1,3 +1,11 @@
+.adjustButton {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
 .counterContainer{
     gap: 8px;
 }
