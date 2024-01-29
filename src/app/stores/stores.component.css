@@ -1,0 +1,13 @@
+
+  .card {
+    width: 18rem;
+    height: 23rem;
+    overflow: hidden;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 11rem;
+    object-fit: cover;
+  }
+
