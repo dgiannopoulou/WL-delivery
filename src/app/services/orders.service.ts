@@ -8,9 +8,10 @@ export class OrdersService {
 
 
   http = inject(HttpClient)
-  url = '/assets/data/my_orders.json'
-  urlDetails = '/assets/data/my_orders_{id}.json'
-  urlDetailsRated = '/assets/data/my_orders_{id}_rated.json'
+
+  url = '/assets/data/my_orders/my_orders.json'
+  urlDetails = '/assets/data/my_orders/my_orders_{id}.json'
+  urlDetailsRated = '/assets/data/my_orders/my_orders_{id}_rated.json'
 
   getOrders() {
     return this.http.get(this.url);
