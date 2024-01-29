@@ -16,7 +16,7 @@
   <ng-template *ngIf="(loggedIn || userLog ); then LoggedInBlock else GuestBlock"></ng-template>
   <ng-template #LoggedInBlock>
     <div class="d-inline-flex">
-      <div class="me-4">
+      <div *ngIf="cartStatus" class="me-4">
         <app-cart-status></app-cart-status>
       </div>
       <div>
