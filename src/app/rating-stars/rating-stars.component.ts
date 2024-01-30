@@ -18,7 +18,7 @@ export class RatingStarsComponent {
 
   fill(n: number): number { 
     if((n-0.5)===this.data?.rate) return 2;
-    else if (n < this.data?.rate) return 1;
+    else if ((n-1) < this.data?.rate) return 1;
     else return 0;
   }
 }
