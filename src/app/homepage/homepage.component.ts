@@ -6,6 +6,7 @@ import {SidebarComponent} from '../sidebar/sidebar.component';
 import {NavigationEnd, Router} from "@angular/router";
 import {CartService} from '../services/cart.service';
 
+
 @Component({
   selector: 'app-homepage',
   standalone: true,
