@@ -5,11 +5,13 @@ import {FamousStoresComponent} from '../famous-stores/famous-stores.component';
 import {SidebarComponent} from '../sidebar/sidebar.component';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {CartService} from '../services/cart.service';
+import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CategoriesComponent, StoresComponent, FamousStoresComponent, SidebarComponent],
+  imports: [CategoriesComponent, StoresComponent, FamousStoresComponent, SidebarComponent, RouterLink, NgIf],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })

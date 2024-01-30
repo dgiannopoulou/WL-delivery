@@ -40,7 +40,6 @@ export class CheckoutPageComponent {
       lastName: new FormControl("", Validators.required),
       email: new FormControl(""),
       address: new FormControl("", Validators.required),
-      address2: new FormControl("", Validators.required),
       zip: new FormControl("", Validators.required),
       shippingAddress: new FormControl(""),
       saveInformation: new FormControl(""),

@@ -1,7 +1,7 @@
-import {Component, inject, Input} from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { StoresService } from '../services/stores.service';
 import { CommonModule } from '@angular/common';
-import {Router, RouterLink} from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-famous-stores',
@@ -17,8 +17,9 @@ export class FamousStoresComponent {
 
   storesList: any;
   service = inject(StoresService);
+  showAllStores: any;
 
-  constructor() {}
+  constructor() { }
   ngOnInit(): void {
 
     this.service.getFamousStores().subscribe(
