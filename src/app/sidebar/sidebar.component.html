@@ -1,21 +1,43 @@
 <div class="side-navigation">
     <div class="p-3 bg-white">
-      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none">
-        <span class="fs-5 fw-semibold">Filter by</span>
-      </a>
+      <h3>Filter by</h3> 
+
+      <!--Filters-->
+
       <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false">
-            Categories
-          </button>
-          <div id="category-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+
+        <!--Categories Section-->
+        <li class="mb-1 mt-3">
+          <h6>Categories</h6>
+          <div>
+            <ul class="list-unstyled fw-normal pb-1 small">
               <li *ngFor="let ct of categories; let i = index">
                 <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="link-dark rounded" [class.text-decoration-none]="true">{{ct.category.replace('_', ' ')}}</a>
               </li>
             </ul>
           </div>
         </li>
+
+        <!--Rating Section-->
+        <li class="mb-1 mt-3">
+          <h6>Rating</h6>
+          <div class="d-flex align-items-center">
+            <input type="range" class="form-range" [(ngModel)]="selectedRating" min="0" max="5" step="0.5">
+            <output class="mt-2 mx-2">{{selectedRating}}</output>
+          </div>
+
+          <div class="mt-2">
+            <label for="ratingInput" class="form-label">Enter Rating:</label>
+            <div class="input-group">
+              <input type="number" class="form-control" id="ratingInput" [(ngModel)]="selectedRating" min="0" max="5" step="0.5">
+              <span class="input-group-text">:5</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary mt-2" (click)="filterRating()">Filter by Rating</button>
+        </li>
+
+
       </ul>
     </div>
   </div>

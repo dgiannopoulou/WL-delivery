@@ -15,6 +15,7 @@ export class StoresComponent {
 
   storesList: any;
   @Input() category: any;
+  @Input() rate: any;
 
   service = inject(StoresService);
 
@@ -30,6 +31,10 @@ export class StoresComponent {
             this.storesList = stores.slice(0, 6);
           } else {
             this.storesList = response.slice(0, 6);
+          }
+          if (this.rate) {
+            let stores = response.filter((current: any) => current.rate == this.rate)
+            this.storesList = stores;
           }
         }
       }

@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class RatingStarsComponent {
   @Input() data: any;
-JSON: any;
+  JSON: any;
 
   counter(n: number): number[] {
     return Array.from({ length: n }, (_, index) => index);

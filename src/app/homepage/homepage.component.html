@@ -15,6 +15,10 @@
                 <a *ngIf="!category" [routerLink]="['/stores']" class="btn btn-primary col-8">See all stores</a>
                 <div class="col-2">&nbsp;</div>
               </div>
+
+            <app-famous-stores [category]="category" [rate]="selectedRating"/>
+            <app-stores [category]="category" [rate]="selectedRating"/>
+
         </div>
     </div>
 </div>
