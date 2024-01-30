@@ -1,8 +1,8 @@
-import {Component, inject, Input} from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { StoresService } from '../services/stores.service';
 import { CommonModule } from '@angular/common';
-import {ActivatedRoute, RouterLink} from "@angular/router";
-import {resolve} from "@angular/compiler-cli";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import { resolve } from "@angular/compiler-cli";
 
 @Component({
   selector: 'app-stores',
@@ -28,7 +28,9 @@ export class StoresComponent {
           this.storesList = response
           if (this.category) {
             let stores = response.filter((current: any) => current.category == this.category)
-            this.storesList = stores;
+            this.storesList = stores.slice(0, 6);
+          } else {
+            this.storesList = response.slice(0, 6);
           }
           if (this.rate) {
             let stores = response.filter((current: any) => current.rate == this.rate)

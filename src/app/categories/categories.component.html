@@ -5,9 +5,10 @@
         <div class="carousel-item active">
           <img [src]=ct.image class="d-block w-100" [alt]=ct.category>
           <div class="carousel-caption d-none d-md-block caption">
-            <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="btn btn-light">
-              <h2>{{ ct.category }}</h2>
+            <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="btn btn-light btn-outline-dark">
+              <h4>{{ ct.category.replace('_', ' ') }}</h4>
             </a>
+            <p class="text-dark">See more restaurants that belong in the category: {{ ct.category.replace('_',' ')}}</p>
           </div>
         </div>
 
