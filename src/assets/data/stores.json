@@ -465,7 +465,7 @@
     "name": "Pizza Fan",
     "category": "PIZZA",
     "address": "Ippokrateiou 35",
-    "rate": 4,
+    "rate": 4.5,
     "image": "https://cdn.e-food.gr/cdn-cgi/image/f=auto/shop/6494006/cover?t=1687778289&platform=web",
     "products": [
       {
