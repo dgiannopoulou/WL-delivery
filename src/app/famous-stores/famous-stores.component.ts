@@ -13,6 +13,7 @@ import {Router, RouterLink} from '@angular/router';
 export class FamousStoresComponent {
 
   @Input() category: any;
+  @Input() rate: any;
 
   storesList: any;
   service = inject(StoresService);
@@ -26,6 +27,10 @@ export class FamousStoresComponent {
           this.storesList = response
           if (this.category) {
             let stores = response.filter((current: any) => current.category == this.category)
+            this.storesList = stores;
+          }
+          if (this.rate) {
+            let stores = response.filter((current: any) => current.rate == this.rate)
             this.storesList = stores;
           }
         }
