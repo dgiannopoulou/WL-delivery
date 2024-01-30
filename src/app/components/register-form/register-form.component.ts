@@ -92,21 +92,15 @@ export class RegisterFormComponent {
           console.log("valid login!");
           console.log(user);
           //Added cdr in order to force update variables, due to asychronous call
-         // this.cdr.detectChanges(); 
+          // this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
           setTimeout(() => {
             this.router.navigate(['']);
-          }, 2);
+          }, 1000);
           // this.actionEventEmitter.emit(this.logged);
         }
       );
     }
   }
-
-  // closeWelcome(){
-  //   this.router.navigate(['']);
-  // }
-
-
 }
