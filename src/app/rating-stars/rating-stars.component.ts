@@ -17,13 +17,8 @@ export class RatingStarsComponent {
   }
 
   fill(n: number): number { 
-    const rating = this.data?.rate || 0;
-    if (n <= rating - 0.5) {
-      return 1; //shows full star
-    }
-    if (n <= rating) {
-      return rating % 1 === 0 ? 1 : 2; //shows full star if whole else half
-    }
-    return 0; // empty star
+    if((n-0.5)===this.data?.rate) return 2;
+    else if (n < this.data?.rate) return 1;
+    else return 0;
   }
 }
