@@ -27,11 +27,6 @@
                                 &&   loginForm.get('email')?.hasError('email')">
                             <small class="text-danger">Email is invalid!</small>
                         </div>
-                        <!-- <div *ngIf="loginForm.get('email')?.touched || loginForm.get('email')?.dirty">
-                            <div *ngIf="loginForm.get('email')?.hasError('required')">
-                                <small class="text-danger">Email is required!</small>
-                            </div>   
-                        </div> -->
                     </div>
                     <div class="row mb-3">
                         <label class="col-sm-3 col-form-label">Password</label>
@@ -42,18 +37,13 @@
                                 &&   loginForm.get('password')?.hasError('required')">
                             <small class="text-danger">Password is required!</small>
                         </div>
-                        <!-- <div *ngIf="loginForm.get('password')?.touched || loginForm.get('password')?.dirty">
-                            <div *ngIf="loginForm.get('password')?.hasError('required')">
-                                <small class="text-danger">Password is required!</small>
-                            </div>   
-                        </div> -->
                     </div>
                     <div class="modal-footer">
                         <small> Go to
                             <a data-bs-toggle="modal" href="#registerModal">register</a>
                         </small>
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal"
-                            data-bs-target="#welcomeModal" [disabled]=!loginForm.valid>Login</button>
+                        data-bs-target="#welcomeModal" [disabled]=!loginForm.valid>Login</button>
                     </div>
                 </form>
             </div>
@@ -152,10 +142,10 @@
 <div class="modal fade" id="welcomeModal" aria-hidden="true" aria-labelledby="welcomeModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
+            <!-- <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="closeWelcome()"></button>
-            </div>
+            </div> -->
             <div class="modal-body mx-auto">
                 <img class="pe-2" src="assets/images/icon_success.png">
                 Welcome {{user?.name}}!

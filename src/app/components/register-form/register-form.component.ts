@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserLoginService } from '../../services/user-login.service';
 import { Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-register-form',
@@ -65,11 +66,14 @@ export class RegisterFormComponent {
           this.user = user;
           console.log("valid register!");
           //Added cdr in order to force update variables, due to asychronous call
-          this.cdr.detectChanges(); 
+          //this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
           // this.actionEventEmitter.emit(this.logged);
           this.registerForm.reset();
+          setTimeout(() => {
+            this.router.navigate(['']);
+          }, 2);
         }
       );
     }
@@ -88,18 +92,21 @@ export class RegisterFormComponent {
           console.log("valid login!");
           console.log(user);
           //Added cdr in order to force update variables, due to asychronous call
-          this.cdr.detectChanges(); 
+         // this.cdr.detectChanges(); 
           localStorage.setItem( 'logIn', 'true');
           this.logged=true;
+          setTimeout(() => {
+            this.router.navigate(['']);
+          }, 2);
           // this.actionEventEmitter.emit(this.logged);
         }
       );
     }
   }
 
-  closeWelcome(){
-    this.router.navigate(['']);
-  }
+  // closeWelcome(){
+  //   this.router.navigate(['']);
+  // }
 
 
 }
