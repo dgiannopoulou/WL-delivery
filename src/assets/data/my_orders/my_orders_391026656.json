@@ -7,5 +7,5 @@
     "payment": "Cash",
     "date": "24/08/2023",
     "items": ["2x Freddo espresso"],
-    "rate": 0
+    "rate": null
 }

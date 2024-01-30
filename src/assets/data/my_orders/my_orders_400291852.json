@@ -7,5 +7,5 @@
     "payment": "Credit card",
     "date": "30/09/2023",
     "items": ["1x Donut , 1x Freddo espresso"],
-    "rate": 0
+    "rate": null
 }

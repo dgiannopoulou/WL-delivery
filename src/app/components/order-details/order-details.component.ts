@@ -15,7 +15,7 @@ export class OrderDetailsComponent {
 
   activatedRoute = inject(ActivatedRoute);
   orderService: OrdersService = inject(OrdersService);
-  selectedRating = 0;
+  selectedRating! : number;
   order: any;
 
 
