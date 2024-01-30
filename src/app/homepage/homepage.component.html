@@ -8,17 +8,13 @@
         <div class="col-lg-10 col-md-9 col-sm-8">
             <div><h1>Welcome to WL Delivery</h1></div>
             <app-categories/>
-            <app-famous-stores [category]="category"/>
-            <app-stores [category]="category"/>
+            <app-famous-stores [category]="category" [rate]="selectedRating"/>
+            <app-stores [category]="category" [rate]="selectedRating"/>
             <div class="row">
               <div class="col-2">&nbsp;</div>
                 <a *ngIf="!category" [routerLink]="['/stores']" class="btn btn-primary col-8">See all stores</a>
                 <div class="col-2">&nbsp;</div>
               </div>
-
-            <app-famous-stores [category]="category" [rate]="selectedRating"/>
-            <app-stores [category]="category" [rate]="selectedRating"/>
-
         </div>
     </div>
 </div>
