@@ -4,7 +4,7 @@
     <div class="col-md-8">
       <form [formGroup]="form" (submit)="onSubmit()" class="card p-2">
         <div class="col-md-9 order-md-1 p-2">
-          <h4 class="mb-3">Billing address</h4>
+          <h4 class="mb-3">Shipping address</h4>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>
@@ -38,12 +38,7 @@
               *ngIf="form.get('address')?.hasError('required')  && form.get('address')?.touched">Required</span>
           </div>
 
-          <div class="mb-3">
-            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-            <input type="text" formControlName="address2" class="form-control" id="address2"
-              placeholder="Apartment or suite">
-          </div>
-
+          
 
           <div class="mb-3">
             <label for="zip">Zip</label>
@@ -53,11 +48,7 @@
           </div>
 
           <hr class="mb-4">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="same-address" formControlName="shippingAddress">
-            <label class="custom-control-label" for="same-address">&nbsp; Shipping address is the same as my billing
-              address</label>
-          </div>
+      
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="save-info" formControlName="saveInformation">
             <label class="custom-control-label" for="save-info">&nbsp; Save this information for next time</label>
