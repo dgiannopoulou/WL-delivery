@@ -10,6 +10,13 @@
   object-fit: cover;
 }
 
+.rating {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
+  gap: 5px;
+}
 
 .btn-top {
   width: 910px;
