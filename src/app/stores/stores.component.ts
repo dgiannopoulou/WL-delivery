@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { StoresService } from '../services/stores.service';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from "@angular/router";
+import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 import { resolve } from "@angular/compiler-cli";
 
 @Component({
@@ -16,11 +16,13 @@ export class StoresComponent {
   storesList: any;
   @Input() category: any;
   @Input() rate: any;
+  router= inject(Router);
 
   service = inject(StoresService);
 
 
   ngOnInit(): void {
+    const isHomepage = this.router.url === '/home'; //check if I am in homepage
 
     this.service.getStores().subscribe(
       {
@@ -28,9 +30,9 @@ export class StoresComponent {
           this.storesList = response
           if (this.category) {
             let stores = response.filter((current: any) => current.category == this.category)
-            this.storesList = stores.slice(0, 6);
+            this.storesList = isHomepage ? stores.slice(0, 6) : stores;
           } else {
-            this.storesList = response.slice(0, 6);
+            this.storesList = isHomepage ? response.slice(0, 6) : response;
           }
           if (this.rate) {
             let stores = response.filter((current: any) => current.rate == this.rate)
