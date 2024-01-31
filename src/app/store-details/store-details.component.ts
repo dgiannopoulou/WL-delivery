@@ -8,7 +8,6 @@ import { CartComponent } from '../cart/cart.component';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-store-details',
   standalone: true,
@@ -39,9 +38,19 @@ export class StoreDetailsComponent {
             })
         }
       })
+    this.initCardInNewStore();
   }
 
   constructor(public cart:CartService){}
+
+  initCardInNewStore() {
+    const storedIdString = localStorage.getItem('storeId');
+    if (storedIdString !== null) {
+        const storedId = JSON.parse(storedIdString);
+        if (storedId !== this.id) this.cart.cleanList();
+    }
+    localStorage.setItem('storeId', JSON.stringify(this.id));
+  }
 
   add(a:any) {
     this.cart.addProduct(a);

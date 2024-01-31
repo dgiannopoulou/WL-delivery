@@ -57,5 +57,14 @@ export class HeaderComponent {
       }
     });
   }
+  // this.initCardInNewStore(store);
 }
 
+// initCardInNewStore(store:any) {
+//   const storedIdString = localStorage.getItem('storeId');
+//   if (storedIdString !== null) {
+//       const storedId = JSON.parse(storedIdString);
+//       if (storedId !== store.id) localStorage.removeItem('cartItems');
+//   }
+//   localStorage.setItem('storeId', JSON.stringify(store.id));
+// }

@@ -31,7 +31,6 @@ export class HomepageComponent {
         window.location.reload();
       }
     });
-    this.cart.cleanList(); // This removes the products from the cart when you visit homepage
 
     //use ActivatedRoute to get the query params
     this.route.queryParams.subscribe(params => {

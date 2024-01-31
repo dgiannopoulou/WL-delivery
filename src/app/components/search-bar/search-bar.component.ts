@@ -3,6 +3,7 @@ import { Component, ElementRef, HostListener, Renderer2, inject } from '@angular
 import { FormControl, FormGroup ,ReactiveFormsModule} from '@angular/forms';
 import { SearchService } from '../../services/search.service';
 import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -60,9 +61,20 @@ export class SearchBarComponent {
   }
 
   selectStore(store:any){
+    this.initCardInNewStore(store);
+
     console.log(store);
     this.clearForm();
     this.router.navigate(["stores",store.id]);
+  }
+
+  initCardInNewStore(store:any) {    
+    const storedIdString = localStorage.getItem('storeId');
+    if (storedIdString !== null) {
+        const storedId = JSON.parse(storedIdString);
+        if (storedId !== store.id) localStorage.removeItem('cartItems');
+    }
+    localStorage.setItem('storeId', JSON.stringify(store.id));
   }
 
   onSearchChange() {
