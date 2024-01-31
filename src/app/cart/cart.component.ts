@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartProducts = this.cart.getCartProducts();
     this.subscribeToProductChanges();
-
     this.route.url.subscribe(segments => {
       this.isCheckoutRoute = segments[segments.length - 1]?.path.endsWith('checkout');
     });
