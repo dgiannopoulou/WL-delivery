@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { CommonModule } from '@angular/common';
 import { CartItem } from '../interfaces/CartItem';
@@ -16,7 +16,8 @@ export class CartComponent implements OnInit {
   cartProducts: CartItem[] = [];
   isCheckoutRoute: boolean = false;
 
-  constructor(public cart: CartService, private route: ActivatedRoute) { }
+  cart = inject(CartService);
+  route = inject(ActivatedRoute);
 
   ngOnInit(): void {
     this.cartProducts = this.cart.getCartProducts();
