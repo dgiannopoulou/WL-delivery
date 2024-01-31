@@ -12,7 +12,7 @@
           <div>
             <ul class="list-unstyled fw-normal pb-1 small">
               <li *ngFor="let ct of categories; let i = index">
-                <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="link-dark rounded" [class.text-decoration-none]="true">{{ct.category.replace('_', ' ')}}</a>
+                <a [routerLink]="['/home']" [queryParams]="{ category: ct.category }" class="link-dark rounded" [class.text-decoration-none]="true"><img class="icon-img" [src]="ct.icon">{{ct.category.replace('_', ' ')}}</a>
               </li>
             </ul>
           </div>

@@ -1,37 +1,44 @@
 [
     {
         "id": 1,
-        "category": "OTHER",
-        "image": "https://www.ubibot.com/wp-content/uploads/2022/09/Temperature-and-Humidity-Monitoring-for-Food-5-1024x512.png"
-    },
-    {
-        "id": 7,
-        "category": "COFFEE",
-        "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/6a712e3f541ef76f0fc39e9989489560/Derivates/0d7fddb3a3d0ee23ddc70ea73b98d957d42fe8bd.jpg"
-    },
-    {
-        "id": 3,
-        "category": "ASIAN",
-        "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg"
-    },
-    {
-        "id": 4,
-        "category": "DONUTS",
-        "image": "https://i.ytimg.com/vi/G2ciuE3-TrM/maxresdefault.jpg" 
-    },
-    {
-        "id": 5,
-        "category": "PIZZA",
-        "image": "https://lostinthecarolinas.com/wp-content/uploads/2022/08/Michaelangelos-1024x683.jpeg"
-    },
-    {
-        "id": 6,
-        "category": "SOUVLAKI",
-        "image": "https://www.dianekochilas.com/wp-content/uploads/2022/02/4-768x439.png"
+        "category": "FAST_FOOD",
+        "image": "https://img.freepik.com/premium-photo/fast-food-assortment-junk-food-concept-unhealthy-food-heart-teeth-skin-figure_839035-83490.jpg",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661685.png?ga=GA1.1.1272884281.1704647588&amp"
     },
     {
         "id": 2,
-        "category": "FAST_FOOD",
-        "image": "https://img.freepik.com/premium-photo/fast-food-assortment-junk-food-concept-unhealthy-food-heart-teeth-skin-figure_839035-83490.jpg" 
+        "category": "ASIAN",
+        "image": "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/Articles/best-woks-for-your-kitchen-2022-section-1.jpg",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661786.png?ga=GA1.1.1272884281.1704647588&"
+    },
+    {
+        "id": 3,
+        "category": "DONUTS",
+        "image": "https://i.ytimg.com/vi/G2ciuE3-TrM/maxresdefault.jpg",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661767.png?ga=GA1.1.1272884281.1704647588&"
+    },
+    {
+        "id": 4,
+        "category": "PIZZA",
+        "image": "https://lostinthecarolinas.com/wp-content/uploads/2022/08/Michaelangelos-1024x683.jpeg",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661777.png?ga=GA1.1.1272884281.1704647588&"
+    },
+    {
+        "id": 5,
+        "category": "SOUVLAKI",
+        "image": "https://www.dianekochilas.com/wp-content/uploads/2022/02/4-768x439.png",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661791.png?ga=GA1.1.1272884281.1704647588&"
+    },
+    {
+        "id": 6,
+        "category": "COFFEE",
+        "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/6a712e3f541ef76f0fc39e9989489560/Derivates/0d7fddb3a3d0ee23ddc70ea73b98d957d42fe8bd.jpg",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661694.png?ga=GA1.1.1272884281.1704647588&"
+    },
+    {
+        "id": 7,
+        "category": "OTHER",
+        "image": "https://www.ubibot.com/wp-content/uploads/2022/09/Temperature-and-Humidity-Monitoring-for-Food-5-1024x512.png",
+        "icon": "https://cdn-icons-png.freepik.com/512/11661/11661826.png?ga=GA1.1.1272884281.1704647588&"
     }
 ]
